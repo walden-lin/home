@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wancheng Lin - Walden</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Fixed Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-link active">Home</a>
+            <a href="#education" class="nav-link">Education</a>
+            <a href="#experience" class="nav-link">Experience</a>
+            <a href="#posts" class="nav-link">Posts</a>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="page-section">
+        <div class="container">
+            <div class="hero">
+                <div class="hero-content">
+                    <div class="hero-text">
+                    <h1 class="hero-title">Wancheng Lin</h1>
+                        <p class="hero-tagline">1st-year PhD Student · Probability & Stochastic Processes </p>
+                    <div class="hero-intro">
+                            <p>Currently studying Stochastic analysis and probabilistic foundation for Generative AI</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Research Interests Integrated -->
+                    <div class="research-interests">
+                        <h2 class="research-title">Research Interests</h2>
+                        <div class="interests-grid">
+                            <div class="interest-card">
+                                <div class="interest-icon">🎲</div>
+                                <h3>Stochastic Analysis</h3>
+                                <p>Broadly interested in the theoretical study of large stochastic systems, especially on rare events and heavy tails</p>
+                            </div>
+                            <div class="interest-card">
+                                <div class="interest-icon">🤖</div>
+                                <h3>Generative AI</h3>
+                                <p>Understanding the probabilistic underpinnings of generative models and their theoretical guarantees.</p>
+                            </div>
+                            <div class="interest-card">
+                                <div class="interest-icon">🔗</div>
+                                <h3>Blockchain & Crypto</h3>
+                                <p>Mathematical foundations of decentralized systems, with emphasis on consensus mechanisms and incentive alignment.</p>
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <!-- Your photo -->
+                    <img src="me.jpeg" alt="Me in Colorado" class="hero-photo">
+                    
+                    <!-- Contact Information -->
+                    <div class="hero-contact-info">
+                        <h3 class="contact-title">Contact</h3>
+                        <p class="contact-email">wancheng@bu.edu</p>
+                        <div class="contact-address">
+                            <p>Office 338 CDS</p>
+                            <p>Department of Mathematics and Statistics</p>
+                            <p>Boston University</p>
+                            <p>665 Commonwealth Ave</p>
+                            <p>Boston, MA 02215</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="page-section">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+            
+            <div class="intro-section">
+                <h2 class="intro-title">How I Became a Professional Student</h2>
+                <p class="intro-text">
+                    My educational path has been unconventional yet deeply rewarding. I started studying Business/Actuarial Science at Nankai University during the global pandemic, while also joining short-term programs on modern machine learning at Peking University, Fudan University, and Oxford University. Before coming to the U.S., I completed a Globalink Mitacs internship at the Université de Montréal. Later, I withdrew from my initial program and transferred internationally to UNC, where I studied Mathematics and Statistics for three years, also taking a course at Duke University. Alongside formal study, much of my growth has been shaped by open platforms such as YouTube, Bilibili, 得到, Coursera, and edX. Now, as a Ph.D. student in Mathematics and Statistics Department at Boston University, I remain sincerely grateful for the high-quality education I have received throughout this journey—and above all, for the privilege of learning from truly exceptional mentors and professors along the way.
+                </p>
+            </div>
+            
+            <div class="education-categories">
+                <!-- Boston University (Current) -->
+                <div class="education-category">
+                    <button class="category-header" data-target="boston-content">
+                        <span class="category-title">🏛️ Boston University (Current PhD)</span>
+                        <span class="category-icon">▸</span>
+                    </button>
+                    <div class="category-content" id="boston-content">
+                        <div class="course-list">
+                            <div class="course-item">
+                                <span class="course-name">Probability Theory</span>
+                                <span class="course-instructor"><a href="https://math.bu.edu/people/kspiliop/" target="_blank" rel="noopener noreferrer">Prof. Konstantinos Spiliopoulos</a></span>
+                            </div>
+                            <div class="course-item">
+                                <span class="course-name">Advanced Stochastic Processes</span>
+                                <span class="course-instructor"><a href="https://math.bu.edu/people/bourguin/" target="_blank" rel="noopener noreferrer">Prof. Solesne Bourguin</a></span>
+                            </div>
+                            <div class="course-item">
+                                <span class="course-name">Algorithms for Machine Learning</span>
+                                <span class="course-instructor"><a href="https://cs-people.bu.edu/aene/" target="_blank" rel="noopener noreferrer">Prof. Alina Ene</a></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- UNC Chapel Hill & Duke University -->
+                <div class="education-category">
+                    <button class="category-header" data-target="unc-duke-content">
+                        <span class="category-title">🎓 UNC Chapel Hill & Duke University</span>
+                        <span class="category-icon">▸</span>
+                    </button>
+                    <div class="category-content" id="unc-duke-content">
+                        <div class="course-list">
+                            <div class="course-item">
+                                <span class="course-name">Advanced Calculus I</span>
+                                <span class="course-instructor"><a href="https://hans.unc.edu/" target="_blank" rel="noopener noreferrer">Prof. Hans Christianson</a></span>
+                            </div>
+                            <div class="course-item">
+                                <span class="course-name">Advanced Calculus II</span>
+                                <span class="course-instructor"><a href="https://mtaylor.web.unc.edu/" target="_blank" rel="noopener noreferrer">Prof. Michael Taylor</a></span>
+                            </div>
+                            <div class="course-item">
+                                <span class="course-name">Topology</span>
+                                <span class="course-instructor"><a href="https://hong.web.unc.edu/" target="_blank" rel="noopener noreferrer">Prof. Jiuzu Hong</a></span>
+                            </div>
+                            <div class="course-item">
+                                <span class="course-name">Algebraic Structure</span>
+                                <span class="course-instructor"><a href="https://varchenko.web.unc.edu/" target="_blank" rel="noopener noreferrer">Prof. Alexander Varchenko</a></span>
+                            </div>
+                            <div class="course-item">
+                                <span class="course-name">Measure Theory & Integration</span>
+                                <span class="course-instructor"><a href="https://math.unc.edu/people/mark-williams/" target="_blank" rel="noopener noreferrer">Prof. Mark Williams</a></span>
+                            </div>
+                            <div class="course-item">
+                                <span class="course-name">Partial Differential Equations</span>
+                                <span class="course-instructor"><a href="https://marzuola.web.unc.edu/" target="_blank" rel="noopener noreferrer">Prof. Jeremy Marzuola</a></span>
+                            </div>
+                            <div class="course-item">
+                                <span class="course-name">Functional Analysis</span>
+                                <span class="course-instructor"><a href="https://idrisassani.web.unc.edu/" target="_blank" rel="noopener noreferrer">Prof. Idris Assani</a></span>
+                            </div>
+                            <div class="course-item">
+                                <span class="course-name">Probability II</span>
+                                <span class="course-instructor"><a href="https://sayan.web.unc.edu/" target="_blank" rel="noopener noreferrer">Prof. Sayan Banerjee</a></span>
+                            </div>
+                            <div class="course-item">
+                                <span class="course-name">Mathematical Statistics</span>
+                                <span class="course-instructor"><a href="https://hannig.web.unc.edu/" target="_blank" rel="noopener noreferrer">Prof. Jan Hannig</a></span>
+                            </div>
+                            <div class="course-item">
+                                <span class="course-name">Theoretical Statistics II</span>
+                                <span class="course-instructor"><a href="https://nobel.web.unc.edu/" target="_blank" rel="noopener noreferrer">Prof. Andrew Nobel</a></span>
+                            </div>
+                            <div class="course-item">
+                                <span class="course-name">Stochastic Models I</span>
+                                <span class="course-instructor"><a href="https://nargon.web.unc.edu/" target="_blank" rel="noopener noreferrer">Prof. Nilay Argon</a></span>
+                            </div>
+                            <div class="course-item">
+                                <span class="course-name">Stochastic Models II</span>
+                                <span class="course-instructor"><a href="https://sziya.web.unc.edu/" target="_blank" rel="noopener noreferrer">Prof. Serhan Ziya</a></span>
+                            </div>
+                            <div class="course-item">
+                                <span class="course-name">Simulation Modeling</span>
+                                <span class="course-instructor"><a href="https://molvera.web.unc.edu/" target="_blank" rel="noopener noreferrer">Prof. Mariana Olvera-Cravioto</a></span>
+                            </div>
+                            <div class="course-item">
+                                <span class="course-name">Markov Decision Process & RL</span>
+                                <span class="course-instructor"><a href="https://gtchen430.github.io/index.html" target="_blank" rel="noopener noreferrer">Prof. Guanting Chen</a></span>
+                            </div>
+                            <div class="course-item">
+                                <span class="course-name">Dynamic Programming & Stochastic Control (Duke)</span>
+                                <span class="course-instructor"><a href="https://www.fuqua.duke.edu/faculty/peng-sun" target="_blank" rel="noopener noreferrer">Prof. Peng Sun</a></span>
+                            </div>
+                            <div class="course-item">
+                                <span class="course-name">Advanced Probability for Applications</span>
+                                <span class="course-instructor"><a href="https://shankarbhamidi.web.unc.edu/" target="_blank" rel="noopener noreferrer">Prof. Shankar Bhamidi</a></span>
+                            </div>
+                            <div class="course-item">
+                                <span class="course-name">Data Driven Decision Models</span>
+                                <span class="course-instructor"><a href="https://vkulkarn.web.unc.edu/" target="_blank" rel="noopener noreferrer">Prof. Vidyadhar Kulkarni</a></span>
+                            </div>
+                            <div class="course-item">
+                                <span class="course-name">Optimization for ML & DS</span>
+                                <span class="course-instructor"><a href="https://michaeljoneill.github.io/" target="_blank" rel="noopener noreferrer">Prof. Michael O'Neil</a></span>
+                            </div>
+                            <div class="course-item">
+                                <span class="course-name">Weak convergence and local weak convergence</span>
+                                <span class="course-instructor"><a href="https://sites.google.com/view/xiangying-huangs-home-page/home" target="_blank" rel="noopener noreferrer">Prof. Zoe Huang</a></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Nankai University -->
+                <div class="education-category">
+                    <button class="category-header" data-target="nankai-content">
+                        <span class="category-title">🗼 Nankai University</span>
+                        <span class="category-icon">▸</span>
+                    </button>
+                    <div class="category-content" id="nankai-content">
+                        <div class="course-list">
+                            <div class="course-item">
+                                <span class="course-name">Econometrics</span>
+                            </div>
+                            <div class="course-item">
+                                <span class="course-name">Introductory Microeconomics</span>
+                            </div>
+                            <div class="course-item">
+                                <span class="course-name">Intermediate Microeconomics</span>
+                            </div>
+                            <div class="course-item">
+                                <span class="course-name">Introductory Macroeconomics</span>
+                            </div>
+                            <div class="course-item">
+                                <span class="course-name">Intermediate Macroeconomics</span>
+                            </div>
+                            <div class="course-item">
+                                <span class="course-name">Investment</span>
+                            </div>
+                            <div class="course-item">
+                                <span class="course-name">Financial Accounting</span>
+                            </div>
+                            <div class="course-item">
+                                <span class="course-name">Finance</span>
+                            </div>
+                            <div class="course-item">
+                                <span class="course-name">Theory of Interest</span>
+                            </div>
+                            <div class="course-item">
+                                <span class="course-name">Insurance and Risk Management</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Short-term Programs & Online Learning -->
+                <div class="education-category">
+                    <button class="category-header" data-target="shortterm-content">
+                        <span class="category-title">🌐 Short-term Programs & Online Learning</span>
+                        <span class="category-icon">▸</span>
+                    </button>
+                    <div class="category-content" id="shortterm-content">
+                        <div class="course-list">
+                            <div class="course-item">
+                                <span class="course-name">Python (Summer School)</span>
+                                <span class="course-instructor">Bin Chen (Peking University)</span>
+                            </div>
+                            <div class="course-item">
+                                <span class="course-name">Internet Data Analysis & Research</span>
+                                <span class="course-instructor">(Oxford University)</span>
+                            </div>
+                            <div class="course-item">
+                                <span class="course-name">SoE Summer School</span>
+                                <span class="course-instructor">Fudan University</span>
+                            </div>
+                            <div class="course-item">
+                                <span class="course-name">Machine Learning Specialization</span>
+                                <span class="course-instructor">Andrew Ng et al. (Coursera)</span>
+                            </div>
+                            <div class="course-item">
+                                <span class="course-name">Deep Learning Specialization</span>
+                                <span class="course-instructor">Andrew Ng et al. (Coursera)</span>
+                            </div>
+                            <div class="course-item">
+                                <span class="course-name">Generative AI with Large Language Models</span>
+                                <span class="course-instructor">Chris Fregly et al. (Coursera)</span>
+                            </div>
+                            <div class="course-item">
+                                <span class="course-name">Various ML & Statistics Courses</span>
+                                <span class="course-instructor">(YouTube, Bilibili, 得到)</span>
+                            </div>
+                            <div class="course-item">
+                                <span class="course-name">Advanced Mathematics & Statistics</span>
+                                <span class="course-instructor">(Coursera, edX)</span>
+                            </div>
+                            <div class="course-item">
+                                <span class="course-name">Probability & Stochastic Processes</span>
+                                <span class="course-instructor">(Online Platforms)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="page-section">
+        <div class="container">
+            <h2 class="section-title">Experience & Conferences</h2>
+            
+            <div class="intro-section">
+                <h2 class="intro-title">My Professional Journey</h2>
+                <p class="intro-text">
+                    I'm incredibly grateful to have crossed paths with so many brilliant minds and kindred spirits throughout my journey. From academic research to industry collaborations and international conferences, each encounter has been a gift. These experiences have not only deepened my love for probability theory and machine learning, but also shown me how to connect the dots between theory and real-world impact.
+                </p>
+            </div>
+            
+            <div class="experience-categories">
+   
+
+                <!-- Academic Conferences -->
+                <div class="experience-category">
+                    <button class="category-header" data-target="academic-conferences">
+                        <span class="category-title">🎓 Academic Conferences</span>
+                        <span class="category-icon">▸</span>
+                    </button>
+                    <div class="category-content" id="academic-conferences">
+                        <div class="conference-list">
+                            <div class="conference-item">
+                                <span class="conference-name"><a href="https://bayesian.org/isba2022/" target="_blank" rel="noopener noreferrer">ISBA World Meeting 2022</a></span>
+                                <span class="conference-location">Montreal, Canada</span>
+                            </div>
+                            <div class="conference-item">
+                                <span class="conference-name"><a href="https://stor.unc.edu/storfest/" target="_blank" rel="noopener noreferrer">STORFest 2023</a></span>
+                                <span class="conference-location">Chapel Hill, NC</span>
+                            </div>
+                            <div class="conference-item">
+                                <span class="conference-name"><a href="https://meetings.informs.org/wordpress/seattle2024/" target="_blank" rel="noopener noreferrer">INFORMS 2024</a></span>
+                                <span class="conference-location">Seattle, WA</span>
+                            </div>
+                            <div class="conference-item">
+                                <span class="conference-name"><a href="https://eva2025.unc.edu/" target="_blank" rel="noopener noreferrer">EVA 2025</a></span>
+                                <span class="conference-location">Chapel Hill, NC</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Industrial Conferences -->
+                <div class="experience-category">
+                    <button class="category-header" data-target="industrial-conferences">
+                        <span class="category-title">🏭 Industrial Conferences</span>
+                        <span class="category-icon">▸</span>
+                    </button>
+                    <div class="category-content" id="industrial-conferences">
+                        <div class="conference-list">
+                            <div class="conference-item">
+                                <span class="conference-name"><a href="https://www.prnasia.com/story/268805-1.shtml" target="_blank" rel="noopener noreferrer">极客公园新大会 2019</a></span>
+                                <span class="conference-location">北京, China</span>
+                            </div>
+                            <div class="conference-item">
+                                <span class="conference-name"><a href="https://www.ethdenver.com/" target="_blank" rel="noopener noreferrer">ETHDenver 2025</a></span>
+                                <span class="conference-location">Colorado, USA</span>
+                            </div>
+                            <div class="conference-item">
+                                <span class="conference-name"><a href="https://solana.com/events" target="_blank" rel="noopener noreferrer">Solana Scale or Die & Ship or Die 2025</a></span>
+                                <span class="conference-location">NYC, USA</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Research Intern at Montreal -->
+                <div class="experience-category">
+                    <button class="category-header" data-target="research-intern-montreal">
+                        <span class="category-title">🇨🇦 Research Intern at Montreal</span>
+                        <span class="category-icon">▸</span>
+                    </button>
+                    <div class="category-content" id="research-intern-montreal">
+                        <div class="conference-list">
+                            <div class="conference-item">
+                                <span class="conference-name">Globalink Mitacs Research Intern</span>
+                                <span class="conference-location">Université de Montréal, Canada</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Posts Section -->
+    <section id="posts" class="page-section">
+        <div class="container">
+            
+            <h2 class="section-title">Posts</h2>
+            
+            <div class="posts-hamburger">
+                <div class="hamburger-menu">
+                    <button class="hamburger-button" data-target="note-content">
+                        <span class="hamburger-icon">☰</span>
+                        <span class="hamburger-label">Notes</span>
+                    </button>
+                    <button class="hamburger-button" data-target="recipe-content">
+                        <span class="hamburger-icon">☰</span>
+                        <span class="hamburger-label">Recipe</span>
+                    </button>
+                </div>
+                
+                <div class="hamburger-content">
+                    
+                    
+                    <div class="content-panel" id="note-content">
+                        <div class="notes-intro">
+                            <h2 class="intro-title">Research Notes</h2>
+                            <p class="intro-text">
+                                Here I collect my mathematical and research notes. 
+                                You can explore a live preview below or open the full collection on GitBook.
+                            </p>
+                        </div>
+                        
+                        <a href="https://walden.gitbook.io/collection" target="_blank" class="note-link">
+                            📖 View Full Notes on GitBook
+                        </a>
+                        
+                        <div class="gitbook-preview">
+                            <iframe 
+                                src="https://walden.gitbook.io/collection" 
+                                frameborder="0" 
+                                width="100%" 
+                                height="800px" 
+                                style="border-radius: 8px; overflow: hidden;">
+                            </iframe>
+                            <div class="gitbook-fallback">
+                                <h3 class="placeholder-title">Preview Unavailable</h3>
+                                <p class="placeholder-text">
+                                    GitBook does not allow embedding here. 
+                                    Please click the button above to view the full notes collection directly.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="content-panel" id="recipe-content">
+                        <h3 class="content-title">Recipes</h3>
+                        <div class="recipes-content">
+                            <article class="recipe-post">
+                                <h4 class="recipe-title">美国PhD自制湘菜</h4>
+                                <div class="recipe-content">
+                                    <h5>🔍 美国食材做湘菜七招</h5>
+                                    
+                                    <div style="font-size: 0.9rem; line-height: 1.4;">
+                                        <p><strong>一、辣椒调料：</strong>用哈瓦那辣椒或塞拉诺辣椒替代二荆条，亚洲超市买郫县豆瓣酱提味，干辣椒粉加白醋调出层次。</p>
+                                        
+                                        <p><strong>二、本地蔬菜：</strong>青椒、长豇豆、四季豆、羽衣甘蓝都能用，大蒜生姜爆香，大火快炒保持脆嫩。</p>
+                                        
+                                        <p><strong>三、肉类处理：</strong>猪肉牛肉鸡肉都行，切片要薄，料酒淀粉盐腌制，高温爆炒锁住肉汁。</p>
+                                        
+                                        <p><strong>四、调料搭配：</strong>本地调料配中式酱油香醋，蜂蜜替代白糖，米醋替代陈醋，橄榄油替代花生油。</p>
+                                        
+                                        <p><strong>五、火候掌控：</strong>湘菜讲究"干炒"，锅要热、油要热、动作要快，控制水分保持蔬菜爽脆。</p>
+                                        
+                                        <p><strong>六、鱼鲜腊味：</strong>本地鱼用盐花椒姜蒜腌制，做剁椒鱼头变通版，腊肠用现成的中式腊肠切片。</p>
+                                        
+                                        <p><strong>七、口感层次：</strong>鲜辣香麻并重，保留蔬菜脆感，尖椒切圈、小葱香菜点缀，最后撒芝麻花椒粉提香。</p>
+                                    </div>
+                                    
+                                    <div style="margin-top: 15px; padding: 12px; background: #f8f9fa; border-radius: 6px; font-size: 0.85rem;">
+                                        <h6 style="font-size: 1rem; margin-bottom: 8px;">🍳 快手菜：辣椒炒肉</h6>
+                                        <p><strong>食材：</strong>猪肉丝200g，青红椒各1个，大蒜3瓣，生姜1块，生抽2勺，料酒1勺，剁椒1勺</p>
+                                        <p><strong>做法：</strong>肉丝腌制10分钟，热锅爆香蒜姜，下肉丝炒至变色，下青红椒丝炒断生，调味翻炒即可。配米饭，思乡良药！</p>
+                                    </div>
+                                    
+                                </div>
+                            </article>
+                            <article class="recipe-post">
+                                <h4 class="recipe-title">🥢 湘菜食材美国替代指南</h4>
+                                <div class="recipe-meta">
+                                    <span class="recipe-time">阅读 5 min</span>
+                                    <span class="recipe-servings">实用指南</span>
+                                </div>
+                                <div class="recipe-content">
+                                    <h5>核心问题与解决妙招</h5>
+                                    
+                                    <div style="font-size: 0.9rem; line-height: 1.5;">
+                                        <div style="margin-bottom: 15px; padding: 12px; background: #f8f9fa; border-radius: 6px; border-left: 4px solid #dc3545;">
+                                            <h6 style="font-size: 1rem; margin-bottom: 8px; color: #dc3545;">1️⃣ 米粉</h6>
+                                            <p><strong>核心问题：</strong>在美国很难买到湖南特有的鲜米粉，多数是干米粉或越南河粉，口感偏硬，容易断、粘锅。</p>
+                                            <p><strong>解决妙招：</strong>用温水泡软，再用开水快速"漂"一下，炒之前保持筋道。若只能买干米粉，不要泡太久，留一点韧性。</p>
+                                        </div>
+                                        
+                                        <div style="margin-bottom: 15px; padding: 12px; background: #f8f9fa; border-radius: 6px; border-left: 4px solid #fd7e14;">
+                                            <h6 style="font-size: 1rem; margin-bottom: 8px; color: #fd7e14;">2️⃣ 虾</h6>
+                                            <p><strong>核心问题：</strong>湘菜常用小河虾，美国多是大号海虾或冷冻虾仁，味道差异大，容易出水、失去鲜香。</p>
+                                            <p><strong>解决妙招：</strong>选带壳鲜虾或优质冷冻虾仁，用盐、糖、姜片轻腌去腥提鲜。快火滑油或热锅爆炒，能保持虾肉弹性和香气。</p>
+                                        </div>
+                                        
+                                        <div style="margin-bottom: 15px; padding: 12px; background: #f8f9fa; border-radius: 6px; border-left: 4px solid #ffc107;">
+                                            <h6 style="font-size: 1rem; margin-bottom: 8px; color: #e69500;">3️⃣ 小炒肉</h6>
+                                            <p><strong>核心问题：</strong>美国超市猪肉常切得厚、瘦，缺少肥瘦相间的层次；切片太厚会嚼劲过大。</p>
+                                            <p><strong>解决妙招：</strong>选五花肉或带点肥油的猪颈肉，切成2-3毫米薄片，用生抽、料酒、淀粉腌10分钟。大火快炒，加小米椒或青椒，炒出锅气。</p>
+                                        </div>
+                                        
+                                        <div style="margin-bottom: 15px; padding: 12px; background: #f8f9fa; border-radius: 6px; border-left: 4px solid #198754;">
+                                            <h6 style="font-size: 1rem; margin-bottom: 8px; color: #198754;">4️⃣ 黄牛肉</h6>
+                                            <p><strong>核心问题：</strong>美国牛肉多偏硬，若选部位不对，做湘式快炒容易柴、不入味。</p>
+                                            <p><strong>解决妙招：</strong>选牛里脊、flank steak或嫩肩肉，逆纹切薄片。腌时加少量油、生抽、淀粉，甚至少许小苏打帮助嫩化。炒时用大火快速翻炒，配辣椒蒜姜提味。</p>
+                                        </div>
+                                        
+                                        <div style="padding: 12px; background: #f8f9fa; border-radius: 6px; border-left: 4px solid #6f42c1;">
+                                            <h6 style="font-size: 1rem; margin-bottom: 8px; color: #6f42c1;">5️⃣ 豆腐</h6>
+                                            <p><strong>核心问题：</strong>美国豆腐种类多，嫩豆腐水分大，容易碎；硬豆腐虽结实却不易入味。</p>
+                                            <p><strong>解决妙招：</strong>煎或炸前先压干水分。嫩豆腐可先煎定型，硬豆腐适合直接红烧或剁椒烹制。加剁椒、豆豉等调料收汁，外香内嫩。</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                    
+                    <!-- Default state -->
+                    <div class="content-panel default-content" id="default-content">
+                        <div class="default-message">
+                            <h3>Select a category to view posts</h3>
+                            <p>Click on any category above to explore the content.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-contact">
+                    <h3 class="footer-title">Get in Touch</h3>
+                    <p class="footer-text">Let's connect—whether through probability theory discussions, collaborations, or a friendly hello.</p>
+                    
+                    <div class="footer-icons">
+                        <a href="https://www.linkedin.com/in/waldenlin/" class="footer-link" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+                            <span class="footer-icon">👔</span>
+                            <span class="footer-label">LinkedIn</span>
+                        </a>
+                        <a href="https://instagram.com/waldendlin" class="footer-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+                            <span class="footer-icon">📸</span>
+                            <span class="footer-label">Instagram</span>
+                        </a>
+                        <a href="mailto:wancheng@bu.edu" class="footer-link" aria-label="Email">
+                            <span class="footer-icon">📧</span>
+                            <span class="footer-label">Email</span>
+                        </a>
+                        <a href="#" class="footer-link" aria-label="WeChat" onclick="showWeChatID(); return false;">
+                            <span class="footer-icon">💬</span>
+                            <span class="footer-label">WeChat</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-credit">
+                    <p class="design-credit">© 2025 <span class="credit-name">Wancheng Lin</span></p>
+                </div>
+            </div>
+            
+            <!-- Visitor Map (Hidden) -->
+            <div class="visitor-map" style="display: none;">
+                <div class="map-container">
+                    <div class="map-stats">
+                        <div class="stat-item">
+                            <span class="stat-number" id="visitor-count">0</span>
+                            <span class="stat-label">Visitors</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" id="page-views">0</span>
+                            <span class="stat-label">Page Views</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" id="countries">0</span>
+                            <span class="stat-label">Countries</span>
+                        </div>
+                    </div>
+                    <div class="map-visualization">
+                        <div class="world-map">
+                            <!-- World Map Outline -->
+                            <svg class="world-outline" viewBox="0 0 400 200" preserveAspectRatio="xMidYMid meet">
+                                <!-- Simplified world map paths -->
+                                <path class="continent" d="M50 80 Q80 60 120 70 Q150 75 180 80 Q200 85 220 90 Q240 95 260 100 Q280 105 300 110 Q320 115 340 120 Q360 125 380 130 L380 140 Q360 135 340 130 Q320 125 300 120 Q280 115 260 110 Q240 105 220 100 Q200 95 180 90 Q150 85 120 80 Q80 75 50 85 Z" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+                                <path class="continent" d="M20 100 Q40 90 60 95 Q80 100 100 105 Q120 110 140 115 Q160 120 180 125 Q200 130 220 135 Q240 140 260 145 Q280 150 300 155 Q320 160 340 165 Q360 170 380 175 L380 185 Q360 180 340 175 Q320 170 300 165 Q280 160 260 155 Q240 150 220 145 Q200 140 180 135 Q160 130 140 125 Q120 120 100 115 Q80 110 60 105 Q40 100 20 110 Z" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+                                <path class="continent" d="M200 20 Q220 15 240 20 Q260 25 280 30 Q300 35 320 40 Q340 45 360 50 Q380 55 400 60 L400 70 Q380 65 360 60 Q340 55 320 50 Q300 45 280 40 Q260 35 240 30 Q220 25 200 30 Z" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+                                <path class="continent" d="M50 150 Q70 145 90 150 Q110 155 130 160 Q150 165 170 170 Q190 175 210 180 Q230 185 250 190 Q270 195 290 200 Q310 205 330 210 Q350 215 370 220 L370 230 Q350 225 330 220 Q310 215 290 210 Q270 205 250 200 Q230 195 210 190 Q190 185 170 180 Q150 175 130 170 Q110 165 90 160 Q70 155 50 160 Z" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+                            </svg>
+                            
+                            <!-- Visitor Dots -->
+                            <div class="map-dot" style="top: 25%; left: 20%;" title="North America - 15 visitors"></div>
+                            <div class="map-dot" style="top: 30%; left: 48%;" title="Europe - 23 visitors"></div>
+                            <div class="map-dot" style="top: 35%; left: 75%;" title="Asia - 31 visitors"></div>
+                            <div class="map-dot" style="top: 55%; left: 50%;" title="Africa - 8 visitors"></div>
+                            <div class="map-dot" style="top: 75%; left: 85%;" title="Australia - 5 visitors"></div>
+                            <div class="map-dot" style="top: 60%; left: 25%;" title="South America - 12 visitors"></div>
+                            <div class="map-dot" style="top: 15%; left: 65%;" title="Russia - 18 visitors"></div>
+                            <div class="map-dot" style="top: 45%; left: 15%;" title="Central America - 7 visitors"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
