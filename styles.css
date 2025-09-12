@@ -40,6 +40,29 @@ h1, h2, h3, h4, h5, h6 {
     padding: 6rem 0 4rem;
     display: flex;
     align-items: center;
+    position: relative;
+}
+
+/* Seamless transitions between sections */
+.page-section:not(:last-child) {
+    border-bottom: none;
+}
+
+/* Smooth background transitions */
+#home {
+    background: linear-gradient(135deg, #fefefe 0%, #fef7f7 100%);
+}
+
+#education {
+    background: linear-gradient(135deg, #fef7f7 0%, #fefefe 100%);
+}
+
+#experience {
+    background: linear-gradient(135deg, #fefefe 0%, #fef7f7 100%);
+}
+
+#posts {
+    background: linear-gradient(135deg, #fef7f7 0%, #fefefe 100%);
 }
 
 .section-title {
@@ -358,6 +381,27 @@ h1, h2, h3, h4, h5, h6 {
     max-width: 600px;
     line-height: 1.7;
     text-align: center;
+}
+
+.walden-name {
+    color: #991b1b;
+    font-weight: 700;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3em;
+    background: linear-gradient(135deg, #991b1b, #dc2626, #ef4444);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 2px 4px rgba(153, 27, 27, 0.1);
+    transition: all 0.3s ease;
+}
+
+.walden-name:hover {
+    transform: scale(1.05);
+    background: linear-gradient(135deg, #dc2626, #ef4444, #f87171);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .hero-email {
@@ -758,6 +802,12 @@ h1, h2, h3, h4, h5, h6 {
 
 
 /* Posts Section */
+#posts {
+    position: relative;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
 .posts-tabs {
     display: flex;
     justify-content: center;
@@ -979,23 +1029,53 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Contact Section */
+.contact-main-section {
+    background: linear-gradient(135deg, #fefefe 0%, #fef7f7 100%);
+    margin-top: 0;
+    padding-top: 4rem;
+    position: relative;
+}
+
 .contact-section {
-    margin-top: 4rem;
-    padding-top: 3rem;
-    border-top: 1px solid #e2e8f0;
-    background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
-    border-radius: 20px;
-    padding: 3rem 2rem;
+    margin-top: 2rem;
+    padding: 5rem 3rem;
+    background: linear-gradient(135deg, #ffffff 0%, #fef7f7 100%);
+    border-radius: 24px;
+    box-shadow: 0 8px 32px rgba(153, 27, 27, 0.08);
+    border: 1px solid #fecaca;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .contact-content {
-    max-width: 600px;
+    max-width: 800px;
     margin: 0 auto;
     text-align: center;
 }
 
 .contact-info {
     margin-bottom: 3rem;
+}
+
+.contact-main-title {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #991b1b;
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    text-align: center;
+}
+
+.contact-main-text {
+    font-size: 1.4rem;
+    color: #6b1e1e;
+    line-height: 1.7;
+    margin-bottom: 3rem;
+    text-align: center;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .contact-info h3 {
@@ -1016,7 +1096,8 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     justify-content: center;
     gap: 3rem;
-    margin-top: 2rem;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
 }
 
 .contact-link {
@@ -1024,28 +1105,42 @@ h1, h2, h3, h4, h5, h6 {
     flex-direction: column;
     align-items: center;
     text-decoration: none;
-    transition: transform 0.3s ease;
-    gap: 0.5rem;
+    transition: all 0.3s ease;
+    gap: 1rem;
+    padding: 2rem 1.5rem;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.6);
+    border: 1px solid rgba(153, 27, 27, 0.1);
+    min-width: 140px;
 }
 
 .contact-link:hover {
-    transform: scale(1.1);
+    transform: translateY(-4px);
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 8px 25px rgba(153, 27, 27, 0.15);
+    border-color: rgba(153, 27, 27, 0.2);
 }
 
 .contact-icon {
-    font-size: 2rem;
+    font-size: 3rem;
     filter: grayscale(100%);
-    transition: filter 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .contact-link:hover .contact-icon {
     filter: grayscale(0%);
+    transform: scale(1.1);
 }
 
 .contact-label {
-    font-size: 0.9rem;
-    color: #6b7280;
-    font-weight: 500;
+    font-size: 1.1rem;
+    color: #6b1e1e;
+    font-weight: 600;
+    font-family: 'Playfair Display', serif;
+}
+
+.contact-link:hover .contact-label {
+    color: #991b1b;
 }
 
 /* Hamburger Menu for Posts */
@@ -1168,8 +1263,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .note-link {
-    display: inline-block;
-    margin-bottom: 1.5rem;
+    display: block;
+    margin: 0 auto 1.5rem auto;
     padding: 0.75rem 1.5rem;
     background-color: #4a5568;
     color: white;
@@ -1177,6 +1272,8 @@ h1, h2, h3, h4, h5, h6 {
     text-decoration: none;
     font-weight: 600;
     transition: background-color 0.3s ease;
+    text-align: center;
+    max-width: 300px;
 }
 
 .note-link:hover {
@@ -1727,37 +1824,42 @@ h1, h2, h3, h4, h5, h6 {
 
 .footer-content {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    gap: 2rem;
+    gap: 3rem;
     flex-wrap: wrap;
+    text-align: center;
 }
 
 .footer-contact {
     flex: 1;
     min-width: 300px;
+    text-align: center;
 }
 
 .footer-title {
     font-family: 'Playfair Display', serif;
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     font-weight: 600;
     color: #fef2f2;
-    margin-bottom: 0.75rem;
+    margin-bottom: 1rem;
 }
 
 .footer-text {
     color: #fecaca;
-    font-size: 0.95rem;
-    line-height: 1.5;
+    font-size: 1.1rem;
+    line-height: 1.6;
     margin-bottom: 1.5rem;
-    max-width: 500px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .footer-icons {
     display: flex;
-    gap: 1rem;
+    gap: 1.5rem;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .footer-link {
@@ -1766,11 +1868,12 @@ h1, h2, h3, h4, h5, h6 {
     gap: 0.5rem;
     color: #fef2f2;
     text-decoration: none;
-    padding: 0.5rem 0.75rem;
+    padding: 0.75rem 1rem;
     border-radius: 6px;
     background: rgba(255, 255, 255, 0.1);
     transition: all 0.3s ease;
     border: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 1rem;
 }
 
 .footer-link:hover {
@@ -1785,7 +1888,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .footer-label {
     font-weight: 500;
-    font-size: 0.9rem;
+    font-size: 1rem;
 }
 
 .footer-credit {
@@ -1797,7 +1900,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .design-credit {
     color: #fecaca;
-    font-size: 0.9rem;
+    font-size: 1rem;
     text-align: center;
     margin: 0;
 }

@@ -46,6 +46,56 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize active nav link
     updateActiveNavLink();
     
+    // Auto-activate Notes subsection when Posts section is accessed
+    function activateNotesSubsection() {
+        const postsSection = document.getElementById('posts');
+        if (postsSection) {
+            const notesButton = postsSection.querySelector('[data-target="note-content"]');
+            const notesContent = document.getElementById('note-content');
+            
+            if (notesButton && notesContent) {
+                // Remove active from all hamburger buttons in posts section
+                const allButtons = postsSection.querySelectorAll('.hamburger-button');
+                const allContents = postsSection.querySelectorAll('.content-panel');
+                
+                allButtons.forEach(btn => btn.classList.remove('active'));
+                allContents.forEach(content => content.classList.remove('active'));
+                
+                // Activate Notes
+                notesButton.classList.add('active');
+                notesContent.classList.add('active');
+            }
+        }
+    }
+    
+    // Activate Notes when Posts section is clicked or scrolled to
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            const targetId = this.getAttribute('href');
+            if (targetId === '#posts') {
+                setTimeout(activateNotesSubsection, 100); // Small delay to ensure scroll completes
+            }
+        });
+    });
+    
+    // Also activate Notes when scrolling to Posts section
+    let postsSectionActive = false;
+    window.addEventListener('scroll', function() {
+        const postsSection = document.getElementById('posts');
+        if (postsSection) {
+            const sectionTop = postsSection.offsetTop - 100;
+            const sectionHeight = postsSection.offsetHeight;
+            const isInPostsSection = window.pageYOffset >= sectionTop && window.pageYOffset < sectionTop + sectionHeight;
+            
+            if (isInPostsSection && !postsSectionActive) {
+                postsSectionActive = true;
+                activateNotesSubsection();
+            } else if (!isInPostsSection && postsSectionActive) {
+                postsSectionActive = false;
+            }
+        }
+    });
+    
     // Posts tab functionality
     const tabButtons = document.querySelectorAll('.tab-button');
     const tabPanels = document.querySelectorAll('.tab-panel');
