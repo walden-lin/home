@@ -1849,45 +1849,6 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Playfair Display', serif;
 }
 
-/* Dark mode footer styles */
-.dark-mode .site-footer {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.8) 0%, rgba(248, 250, 252, 0.8) 100%);
-    backdrop-filter: blur(20px);
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-.dark-mode .footer-title {
-    color: #374151;
-}
-
-.dark-mode .footer-text {
-    color: #6b7280;
-}
-
-.dark-mode .footer-link {
-    color: #6b7280;
-    background: rgba(0, 0, 0, 0.05);
-    border-color: rgba(0, 0, 0, 0.1);
-}
-
-.dark-mode .footer-link:hover {
-    color: #dc2626;
-    background: rgba(220, 38, 38, 0.1);
-    border-color: rgba(220, 38, 38, 0.2);
-}
-
-.dark-mode .design-credit {
-    color: #9ca3af;
-}
-
-.dark-mode .design-credit .year {
-    color: #dc2626;
-    font-weight: 700;
-}
-
-.dark-mode .credit-name {
-    color: #374151;
-}
 
 /* Responsive footer */
 @media (max-width: 768px) {
@@ -2017,24 +1978,6 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
-/* Dark mode visitor map */
-.dark-mode .visitor-map {
-    border-top-color: rgba(255, 255, 255, 0.1);
-}
-
-.dark-mode .world-map {
-    background: rgba(255, 255, 255, 0.03);
-    border-color: rgba(255, 255, 255, 0.05);
-}
-
-.dark-mode .map-dot {
-    background: #f9fafb;
-    box-shadow: 0 0 10px rgba(249, 250, 251, 0.3);
-}
-
-.dark-mode .map-dot:hover {
-    box-shadow: 0 0 15px rgba(249, 250, 251, 0.6);
-}
 
 /* Responsive visitor map */
 @media (max-width: 768px) {
@@ -2059,76 +2002,7 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
-.dark-mode .interest-card,
-.dark-mode .course-item,
-.dark-mode .conference-item,
-.dark-mode .experience-item {
-    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
-    border-color: #e5e7eb;
-    color: #374151;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-}
 
-.dark-mode .interest-card:hover,
-.dark-mode .course-item:hover,
-.dark-mode .conference-item:hover,
-.dark-mode .experience-item:hover {
-    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
-    border-color: #d1d5db;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
-}
-
-.dark-mode .interest-card h3 {
-    background: linear-gradient(135deg, #991b1b, #dc2626);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-.dark-mode .interest-card p {
-    color: #4b5563;
-}
-
-.dark-mode .intro-section {
-    background: none;
-    border: none;
-}
-
-.dark-mode .intro-title {
-    color: #fef2f2;
-}
-
-.dark-mode .intro-text {
-    color: #e2e8f0;
-}
-
-/* Dark mode general text improvements */
-.dark-mode p {
-    color: #4b5563;
-}
-
-.dark-mode .contact-main-text {
-    color: #4b5563;
-}
-
-.dark-mode .contact-label {
-    color: #4b5563;
-}
-
-.dark-mode .walden-name {
-    background: linear-gradient(135deg, #991b1b, #dc2626, #ef4444);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-.dark-mode .category-header[data-target="boston-content"] {
-    background: #1e293b;
-    color: #f1f5f9;
-    border-bottom: 1px solid #475569;
-    border-left: 4px solid #ff6b6b;
-}
 
 .dark-mode .category-header[data-target="unc-duke-content"] {
     background: #1e293b;
