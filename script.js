@@ -306,43 +306,8 @@ document.addEventListener('DOMContentLoaded', function() {
         document.body.style.opacity = '1';
     }, 100);
     
-    // Initialize dark mode
-    initDarkMode();
 });
 
-// Dark mode functionality
-function initDarkMode() {
-    const darkModeToggle = document.createElement('button');
-    darkModeToggle.className = 'dark-mode-toggle';
-    darkModeToggle.innerHTML = '🌙';
-    darkModeToggle.setAttribute('aria-label', 'Toggle dark mode');
-    
-    // Add to navbar
-    const navContainer = document.querySelector('.nav-container');
-    if (navContainer) {
-        navContainer.appendChild(darkModeToggle);
-    }
-    
-    // Check for saved theme preference
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark') {
-        document.body.classList.add('dark-mode');
-        darkModeToggle.innerHTML = '☀️';
-    }
-    
-    // Toggle dark mode
-    darkModeToggle.addEventListener('click', function() {
-        document.body.classList.toggle('dark-mode');
-        
-        if (document.body.classList.contains('dark-mode')) {
-            localStorage.setItem('theme', 'dark');
-            darkModeToggle.innerHTML = '☀️';
-        } else {
-            localStorage.setItem('theme', 'light');
-            darkModeToggle.innerHTML = '🌙';
-        }
-    });
-}
 
 // Utility function for smooth scrolling to top
 function scrollToTop() {

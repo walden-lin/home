@@ -1283,6 +1283,7 @@ h1, h2, h3, h4, h5, h6 {
 .gitbook-preview {
     width: 100%;
     margin-top: 1rem;
+    margin-bottom: 3rem;
 }
 
 .gitbook-preview iframe {
@@ -1717,102 +1718,30 @@ h1, h2, h3, h4, h5, h6 {
     outline-offset: 2px;
 }
 
-/* Dark Mode Toggle */
-.dark-mode-toggle {
-    position: fixed;
-    top: 1rem;
-    right: 2rem;
-    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
-    border: 2px solid #e2e8f0;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    font-size: 1.2rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    z-index: 1001;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+
+/* Print styles */
+
+
+
+@media print {
+    .navbar {
+        display: none;
+    }
+    
+    .section {
+        min-height: auto;
+        page-break-inside: avoid;
+    }
 }
 
-.dark-mode-toggle:hover {
-    background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
-    transform: scale(1.1);
-    border-color: #3b82f6;
-}
 
-/* Dark Mode Styles */
-.dark-mode {
-    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-    color: #f1f5f9;
-}
 
-.dark-mode .navbar {
-    background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.95) 100%);
-    border-bottom-color: rgba(71, 85, 105, 0.3);
-}
 
-.dark-mode .nav-link {
-    color: #fca5a5;
-}
 
-.dark-mode .nav-link:hover,
-.dark-mode .nav-link.active {
-    color: #f87171;
-    background-color: rgba(248, 113, 113, 0.1);
-}
 
-.dark-mode h1, .dark-mode h2, .dark-mode h3, .dark-mode h4, .dark-mode h5, .dark-mode h6 {
-    color: #fef2f2;
-}
 
-.dark-mode .section-title {
-    color: #fef2f2;
-}
 
-.dark-mode .content-title {
-    color: #fef2f2;
-}
 
-.dark-mode .hero-title {
-    background: linear-gradient(135deg, #fef2f2 0%, #f87171 50%, #fca5a5 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-.dark-mode .hero-tagline {
-    background: linear-gradient(135deg, #fca5a5, #f87171);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-.dark-mode .hero-intro {
-    color: #fca5a5;
-}
-
-.dark-mode .hero-email {
-    color: #9ca3af;
-}
-
-.dark-mode .contact-title {
-    color: #fef2f2;
-}
-
-.dark-mode .hero-contact-info .contact-email {
-    color: #9ca3af;
-}
-
-.dark-mode .contact-address {
-    color: #fca5a5;
-}
-
-.dark-mode .contact-address p:first-child {
-    color: #fef2f2;
-}
 
 /* Footer Styles */
 .site-footer {
@@ -1908,6 +1837,12 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0;
 }
 
+.design-credit .year {
+    color: #dc2626;
+    font-weight: 700;
+    font-family: 'Playfair Display', serif;
+}
+
 .credit-name {
     color: #374151;
     font-weight: 600;
@@ -1916,33 +1851,42 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Dark mode footer styles */
 .dark-mode .site-footer {
-    background: linear-gradient(135deg, #1f2937 0%, #374151 100%);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.8) 0%, rgba(248, 250, 252, 0.8) 100%);
+    backdrop-filter: blur(20px);
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .dark-mode .footer-title {
-    color: #f9fafb;
+    color: #374151;
 }
 
 .dark-mode .footer-text {
-    color: #d1d5db;
+    color: #6b7280;
 }
 
 .dark-mode .footer-link {
-    color: #f9fafb;
-    background: rgba(255, 255, 255, 0.05);
-    border-color: rgba(255, 255, 255, 0.1);
+    color: #6b7280;
+    background: rgba(0, 0, 0, 0.05);
+    border-color: rgba(0, 0, 0, 0.1);
 }
 
 .dark-mode .footer-link:hover {
-    background: rgba(255, 255, 255, 0.1);
+    color: #dc2626;
+    background: rgba(220, 38, 38, 0.1);
+    border-color: rgba(220, 38, 38, 0.2);
 }
 
 .dark-mode .design-credit {
-    color: #d1d5db;
+    color: #9ca3af;
+}
+
+.dark-mode .design-credit .year {
+    color: #dc2626;
+    font-weight: 700;
 }
 
 .dark-mode .credit-name {
-    color: #f9fafb;
+    color: #374151;
 }
 
 /* Responsive footer */
@@ -2119,30 +2063,31 @@ h1, h2, h3, h4, h5, h6 {
 .dark-mode .course-item,
 .dark-mode .conference-item,
 .dark-mode .experience-item {
-    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
-    border-color: #475569;
-    color: #f1f5f9;
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    border-color: #e5e7eb;
+    color: #374151;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 
 .dark-mode .interest-card:hover,
 .dark-mode .course-item:hover,
 .dark-mode .conference-item:hover,
 .dark-mode .experience-item:hover {
-    background: linear-gradient(135deg, #334155 0%, #475569 100%);
-    border-color: #64748b;
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+    border-color: #d1d5db;
     transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
 }
 
 .dark-mode .interest-card h3 {
-    background: linear-gradient(135deg, #fef2f2, #f87171);
+    background: linear-gradient(135deg, #991b1b, #dc2626);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
 }
 
 .dark-mode .interest-card p {
-    color: #fca5a5;
+    color: #4b5563;
 }
 
 .dark-mode .intro-section {
@@ -2156,6 +2101,26 @@ h1, h2, h3, h4, h5, h6 {
 
 .dark-mode .intro-text {
     color: #e2e8f0;
+}
+
+/* Dark mode general text improvements */
+.dark-mode p {
+    color: #4b5563;
+}
+
+.dark-mode .contact-main-text {
+    color: #4b5563;
+}
+
+.dark-mode .contact-label {
+    color: #4b5563;
+}
+
+.dark-mode .walden-name {
+    background: linear-gradient(135deg, #991b1b, #dc2626, #ef4444);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .dark-mode .category-header[data-target="boston-content"] {
@@ -2232,27 +2197,27 @@ h1, h2, h3, h4, h5, h6 {
 /* .dark-mode .category-header.active - Removed red background effect to keep original school colors */
 
 .dark-mode .dark-mode-toggle {
-    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
-    border-color: #475569;
-    color: #e2e8f0;
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    border-color: #d1d5db;
+    color: #374151;
 }
 
 .dark-mode .dark-mode-toggle:hover {
-    background: linear-gradient(135deg, #334155 0%, #475569 100%);
-    border-color: #60a5fa;
+    background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e1 100%);
+    border-color: #dc2626;
 }
 
 .dark-mode .contact-section {
-    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
-    border-top-color: #475569;
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    border-top-color: #e5e7eb;
 }
 
 .dark-mode .contact-info h3 {
-    color: #fef2f2;
+    color: #1f2937;
 }
 
 .dark-mode .contact-info p {
-    color: #e2e8f0;
+    color: #4b5563;
 }
 
 .contact-email {
