@@ -17,6 +17,8 @@ body {
     background: linear-gradient(135deg, #fefefe 0%, #fef7f7 100%);
     overflow-x: hidden;
     transition: all 0.3s ease;
+    -webkit-text-size-adjust: 100%; /* prevent iOS auto-zoom */
+    text-size-adjust: 100%;
 }
 
 /* Typography */
@@ -27,12 +29,23 @@ h1, h2, h3, h4, h5, h6 {
     color: #991b1b;
 }
 
+/* Clamp-based type scale for better mobile sizing */
+h1.hero-title { font-size: clamp(2rem, 6vw, 4rem); }
+.hero-tagline { font-size: clamp(1rem, 3.2vw, 1.25rem); }
+.intro-title, .section-title { font-size: clamp(1.5rem, 4.5vw, 2.5rem); }
+.contact-main-title { font-size: clamp(1.6rem, 4.8vw, 2.5rem); }
+.contact-main-text { font-size: clamp(1rem, 3.8vw, 1.4rem); }
+
 /* Container */
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 2rem;
 }
+
+/* Respect iPhone safe areas */
+.navbar { padding-top: max(env(safe-area-inset-top), 0px); }
+.site-footer { padding-bottom: max(env(safe-area-inset-bottom), 2rem); }
 
 /* Page Sections */
 .page-section {
@@ -467,7 +480,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .hero-photo {
-    width: 420px;
+    width: min(420px, 90vw);
     height: auto;
     object-fit: cover;
     border-radius: 20px;
@@ -1288,7 +1301,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .gitbook-preview iframe {
     width: 100%;
-    height: 800px;
+    height: clamp(420px, 120vw, 800px);
     border-radius: 8px;
     border: none;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -1533,6 +1546,8 @@ h1, h2, h3, h4, h5, h6 {
     .nav-container {
         padding: 0 1rem;
         gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
     }
     
     .nav-link {
@@ -1543,10 +1558,12 @@ h1, h2, h3, h4, h5, h6 {
         grid-template-columns: 1fr;
         gap: 2rem;
         text-align: center;
+        place-items: center;
     }
     
     .hero-text {
         margin-bottom: 1.5rem;
+        align-items: center;
     }
     
     .hero-title {
@@ -1660,6 +1677,7 @@ h1, h2, h3, h4, h5, h6 {
     
     .contact-icons {
         gap: 2rem;
+        justify-content: center;
     }
     
     .posts-tabs {
@@ -1670,6 +1688,11 @@ h1, h2, h3, h4, h5, h6 {
         font-size: 1rem;
         padding: 0.5rem 1rem;
     }
+
+    /* Ensure key blocks are centered on mobile */
+    .hero-photo { display: block; margin: 0 auto; }
+    .contact-content { display: flex; flex-direction: column; align-items: center; }
+    .gitbook-preview, .notes-content, .posts-hamburger { margin-left: auto; margin-right: auto; }
 }
 
 @media (max-width: 480px) {
@@ -2002,157 +2025,6 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
-
-
-.dark-mode .category-header[data-target="unc-duke-content"] {
-    background: #1e293b;
-    color: #f1f5f9;
-    border-bottom: 1px solid #475569;
-    border-left: 4px solid #74c0fc;
-}
-
-.dark-mode .category-header[data-target="nankai-content"] {
-    background: #1e293b;
-    color: #f1f5f9;
-    border-bottom: 1px solid #475569;
-    border-left: 4px solid #a855f7;
-}
-
-.dark-mode .category-header[data-target="shortterm-content"] {
-    background: #1e293b;
-    color: #f1f5f9;
-    border-bottom: 1px solid #475569;
-    border-left: 4px solid #4ade80;
-}
-
-.dark-mode .hamburger-button {
-    background: linear-gradient(135deg, #7f1d1d 0%, #991b1b 100%);
-    border-color: #dc2626;
-    color: #fef2f2;
-}
-
-.dark-mode .category-header[data-target="boston-content"]:hover {
-    background: #334155;
-    color: #fef2f2;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    border-left-color: #ff6b6b;
-}
-
-.dark-mode .category-header[data-target="unc-duke-content"]:hover {
-    background: #334155;
-    color: #fef2f2;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    border-left-color: #74c0fc;
-}
-
-.dark-mode .category-header[data-target="nankai-content"]:hover {
-    background: #334155;
-    color: #fef2f2;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    border-left-color: #a855f7;
-}
-
-.dark-mode .category-header[data-target="shortterm-content"]:hover {
-    background: #334155;
-    color: #fef2f2;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    border-left-color: #4ade80;
-}
-
-.dark-mode .hamburger-button:hover {
-    background: linear-gradient(135deg, #991b1b 0%, #dc2626 100%);
-    border-color: #f87171;
-}
-
-/* .dark-mode .category-header.active - Removed red background effect to keep original school colors */
-
-.dark-mode .dark-mode-toggle {
-    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-    border-color: #d1d5db;
-    color: #374151;
-}
-
-.dark-mode .dark-mode-toggle:hover {
-    background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e1 100%);
-    border-color: #dc2626;
-}
-
-.dark-mode .contact-section {
-    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
-    border-top-color: #e5e7eb;
-}
-
-.dark-mode .contact-info h3 {
-    color: #1f2937;
-}
-
-.dark-mode .contact-info p {
-    color: #4b5563;
-}
-
-.contact-email {
-    color: #6b7280;
-    font-size: 1rem;
-    font-style: italic;
-    margin-top: 1rem;
-    text-align: center;
-}
-
-.dark-mode .contact-email {
-    color: #9ca3af;
-}
-
-.dark-mode .image-placeholder {
-    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
-    border-color: #475569;
-    color: #cbd5e1;
-}
-
-.dark-mode .image-placeholder:hover {
-    background: linear-gradient(135deg, #334155 0%, #475569 100%);
-    border-color: #60a5fa;
-}
-
-/* Dark mode for university-specific styling */
-/* Dark Mode Education Category Hover Effects - Keep School Colors */
-
-.dark-mode .course-instructor a {
-    color: #f87171;
-}
-
-.dark-mode .course-instructor a:hover {
-    color: #fca5a5;
-    border-bottom-color: #fca5a5;
-}
-
-.dark-mode .research-interests {
-    border-top-color: rgba(248, 113, 113, 0.3);
-}
-
-.dark-mode .research-title {
-    color: #fef2f2;
-}
-
-.dark-mode .conference-name a {
-    color: #fef2f2;
-}
-
-.dark-mode .conference-name a:hover {
-    color: #f87171;
-    border-bottom-color: #f87171;
-}
-
-.dark-mode .course-item:has(.course-instructor:empty) {
-    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
-}
-
-.dark-mode .course-item:not(:has(.course-instructor:not(:empty))) {
-    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
-}
 
 /* Print styles */
 @media print {
