@@ -583,6 +583,74 @@ function showCountryInfo(countryInfo) {
     }, 3000);
 }
 
+
+// Typing effect with blinking cursor and HTML support
+function typeWriter(element, text, speed = 40) {
+    element.innerHTML = "";
+    element.classList.add("typing-cursor");
+    let i = 0;
+
+    function typing() {
+        if (i < text.length) {
+            // Check if we're starting a link
+            if (text.substring(i, i + 3) === '<a ') {
+                // Find the end of the link tag
+                const linkEnd = text.indexOf('</a>', i) + 4;
+                if (linkEnd > i) {
+                    element.innerHTML += text.substring(i, linkEnd);
+                    i = linkEnd;
+                } else {
+                    element.innerHTML += text.charAt(i);
+                    i++;
+                }
+            } else {
+                element.innerHTML += text.charAt(i);
+                i++;
+            }
+            setTimeout(typing, speed);
+        } else {
+            // remove cursor when finished
+            element.classList.remove("typing-cursor");
+        }
+    }
+    typing();
+}
+
+// Expandable fun fact functionality
+function toggleFunFact(targetId) {
+    const content = document.getElementById(targetId);
+    const toggle = document.querySelector(`[data-target="${targetId}"]`);
+    const typedElement = content.querySelector("#fun-fact-typed");
+
+    // Your fun fact text with HTML links
+    const fullText = `I attended the same undergraduate institution as the founder of TikTok, <a href="https://en.wikipedia.org/wiki/Zhang_Yiming" target="_blank" rel="noopener">Zhang Yiming</a>, and the "modern father of differential geometry" <a href="https://en.wikipedia.org/wiki/Shiing-Shen_Chern" target="_blank" rel="noopener">Shiing-Shen Chern</a>—both of whom are constant sources of inspiration for me in entrepreneurship and mathematics.`;
+
+    if (content && toggle) {
+        const isActive = content.classList.contains("active");
+
+        if (isActive) {
+            content.classList.remove("active");
+            toggle.classList.remove("active");
+            typedElement.textContent = ""; // reset on close
+        } else {
+            content.classList.add("active");
+            toggle.classList.add("active");
+            typeWriter(typedElement, fullText, 40);
+        }
+    }
+}
+
+// Attach event listeners
+document.addEventListener("DOMContentLoaded", function() {
+    const funFactToggles = document.querySelectorAll(".fun-fact-toggle");
+    funFactToggles.forEach(toggle => {
+        toggle.addEventListener("click", function() {
+            const targetId = this.getAttribute("data-target");
+            toggleFunFact(targetId);
+        });
+    });
+});
+
 // Initialize visitor map when page loads
 document.addEventListener('DOMContentLoaded', function() {
     initializeVisitorMap();
