@@ -1689,6 +1689,19 @@ h1.hero-title { font-size: clamp(2rem, 6vw, 4rem); }
         font-size: 1rem;
         padding: 0.5rem 1rem;
     }
+    
+    /* Fix interests grid for mobile - single column layout */
+    .interests-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+    
+    .interest-card {
+        padding: 1.5rem;
+        margin: 0 0.5rem;
+    }
 
     /* Ensure key blocks are centered on mobile */
     .hero-photo { display: block; margin: 0 auto; }
@@ -1726,6 +1739,16 @@ h1.hero-title { font-size: clamp(2rem, 6vw, 4rem); }
     
     .contact-icon {
         font-size: 1.5rem;
+    }
+    
+    /* Further optimize interests grid for very small screens */
+    .interests-grid {
+        gap: 1rem;
+    }
+    
+    .interest-card {
+        padding: 1.25rem;
+        margin: 0 0.25rem;
     }
 }
 

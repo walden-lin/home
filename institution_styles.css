@@ -1,0 +1,167 @@
+/* Institution and Platform Name Styling */
+.institution-name {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    color: #991b1b;
+    font-style: italic;
+    text-shadow: 0 1px 2px rgba(153, 27, 27, 0.1);
+}
+
+.platform-name {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    color: #dc2626;
+    background: linear-gradient(135deg, #dc2626, #ef4444);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Elegant Fun Fact Design */
+.expandable-fun-fact {
+    margin-top: 2rem;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.95) 100%);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(220, 38, 38, 0.15);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    position: relative;
+}
+
+.expandable-fun-fact::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #dc2626, #ef4444, #f87171);
+}
+
+/* Redesigned Fun Fact Toggle */
+.fun-fact-toggle {
+    width: 100%;
+    background: #fff;
+    border: 1px solid rgba(220, 38, 38, 0.15);
+    border-radius: 12px;
+    padding: 0.85rem 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+}
+
+.fun-fact-toggle:hover {
+    background: #fef2f2; /* soft red tint */
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+}
+
+.fun-fact-icon {
+    font-size: 1.1rem;
+    color: #dc2626;
+    flex-shrink: 0;
+    margin-right: 0.6rem;
+}
+
+.fun-fact-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #374151;
+    flex: 1;
+    text-align: left;
+    line-height: 1.4;
+}
+
+.fun-fact-arrow {
+    font-size: 0.9rem;
+    color: #dc2626;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.fun-fact-toggle.active .fun-fact-arrow {
+    transform: rotate(180deg);
+    color: #b91c1c;
+}
+
+/* Content area */
+.fun-fact-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.fun-fact-content.active {
+    max-height: 250px;
+}
+
+.fun-fact-card {
+    padding: 1.25rem 1.5rem;
+    background: #fff;
+    border-top: 1px solid rgba(220, 38, 38, 0.1);
+    border-radius: 0 0 12px 12px;
+    font-style: italic;
+}
+
+.fun-fact-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 2rem;
+    right: 2rem;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(220, 38, 38, 0.2), transparent);
+}
+
+#fun-fact-typed {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #4b5563;
+    margin: 0;
+    font-style: italic;
+    white-space: pre-wrap;
+    position: relative;
+}
+
+#fun-fact-typed a {
+    color: #dc2626;
+    text-decoration: none;
+    font-weight: 600;
+    border-bottom: 1px solid transparent;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+#fun-fact-typed a:hover {
+    color: #991b1b;
+    border-bottom-color: #991b1b;
+}
+
+#fun-fact-typed a::after {
+    content: '↗';
+    font-size: 0.8em;
+    margin-left: 2px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+#fun-fact-typed a:hover::after {
+    opacity: 1;
+}
+
+/* Blinking cursor effect */
+.typing-cursor::after {
+    content: "|";
+    display: inline-block;
+    margin-left: 2px;
+    animation: blink 1s step-start infinite;
+    color: #dc2626;
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
+}
