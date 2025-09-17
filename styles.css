@@ -1556,15 +1556,16 @@ h1.hero-title { font-size: clamp(2rem, 6vw, 4rem); }
     }
     
     .hero {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
         gap: 2rem;
-        text-align: center;
-        place-items: center;
+        text-align: left;
+        place-items: start;
+        min-height: 60vh;
     }
     
     .hero-text {
         margin-bottom: 1.5rem;
-        align-items: center;
+        align-items: flex-start;
     }
     
     .hero-title {
@@ -1622,8 +1623,14 @@ h1.hero-title { font-size: clamp(2rem, 6vw, 4rem); }
     
     .course-list,
     .conference-list {
-        grid-template-columns: 1fr;
-        gap: 1rem;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.75rem;
+    }
+    
+    .course-item,
+    .conference-item {
+        font-size: 0.9rem;
+        padding: 0.5rem;
     }
     
     .hamburger-menu {
@@ -1690,21 +1697,37 @@ h1.hero-title { font-size: clamp(2rem, 6vw, 4rem); }
         padding: 0.5rem 1rem;
     }
     
-    /* Fix interests grid for mobile - single column layout */
+    /* Restore interests grid for mobile - maintain 3-column structure */
     .interests-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
         max-width: 100%;
         margin: 0 auto;
     }
     
     .interest-card {
-        padding: 1.5rem;
-        margin: 0 0.5rem;
+        padding: 1.2rem;
+        margin: 0;
+        font-size: 0.9rem;
+    }
+    
+    .interest-card h3 {
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .interest-card p {
+        font-size: 0.85rem;
+        line-height: 1.4;
     }
 
-    /* Ensure key blocks are centered on mobile */
-    .hero-photo { display: block; margin: 0 auto; }
+    /* Optimize hero photo for mobile side-by-side layout */
+    .hero-photo { 
+        width: 100%;
+        max-width: 200px;
+        height: auto;
+        margin: 0;
+    }
     .contact-content { display: flex; flex-direction: column; align-items: center; }
     .gitbook-preview, .notes-content, .posts-hamburger { margin-left: auto; margin-right: auto; }
 }
@@ -1741,9 +1764,26 @@ h1.hero-title { font-size: clamp(2rem, 6vw, 4rem); }
         font-size: 1.5rem;
     }
     
-    /* Further optimize interests grid for very small screens */
+    /* For very small screens, fall back to single column */
+    .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+        place-items: center;
+    }
+    
     .interests-grid {
+        grid-template-columns: 1fr;
         gap: 1rem;
+    }
+    
+    .course-list,
+    .conference-list {
+        grid-template-columns: 1fr;
+    }
+    
+    .hero-photo {
+        max-width: 150px;
+        margin: 0 auto;
     }
     
     .interest-card {
