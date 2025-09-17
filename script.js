@@ -623,7 +623,7 @@ function toggleFunFact(targetId) {
     const typedElement = content.querySelector("#fun-fact-typed");
 
     // Your fun fact text with HTML links
-    const fullText = `I attended the same undergraduate institution as the founder of TikTok, <a href="https://en.wikipedia.org/wiki/Zhang_Yiming" target="_blank" rel="noopener">Zhang Yiming</a>, and the "modern father of differential geometry" <a href="https://en.wikipedia.org/wiki/Shiing-Shen_Chern" target="_blank" rel="noopener">Shiing-Shen Chern</a>—both of whom are constant sources of inspiration for me in entrepreneurship and mathematics.`;
+    const fullText = `I attended the same undergraduate institution as the founder of TikTok, <a href="https://en.wikipedia.org/wiki/Zhang_Yiming" target="_blank" rel="noopener">Zhang Yiming</a>, and the "father of modern differential geometry" <a href="https://en.wikipedia.org/wiki/Shiing-Shen_Chern" target="_blank" rel="noopener">Shiing-Shen Chern</a>—both of whom are constant sources of inspiration for me in entrepreneurship and mathematics.`;
 
     if (content && toggle) {
         const isActive = content.classList.contains("active");
