@@ -1727,7 +1727,9 @@ h1.hero-title {
     .hero-photo {
         order: 2;
         width: 200px;
+        height: auto;
         margin: 0 auto;
+        object-fit: contain;
     }
     
     /* Mobile Contact Info - Under Photo */
@@ -2224,7 +2226,9 @@ h1.hero-title {
     
     .hero-photo {
         max-width: 200px;
+        height: auto;
         margin: 0 auto;
+        object-fit: contain;
     }
     
     .image-placeholder {
@@ -2312,8 +2316,8 @@ h1.hero-title {
     .hero-photo {
         order: 2;
         width: 180px;
-        height: 180px;
-        object-fit: cover;
+        height: auto;
+        object-fit: contain;
         border-radius: 12px;
         margin: 0 auto;
         box-shadow: 0 6px 16px rgba(0,0,0,0.12);
@@ -2455,7 +2459,9 @@ h1.hero-title {
     
     .hero-photo {
         max-width: 150px;
+        height: auto;
         margin: 0 auto;
+        object-fit: contain;
     }
     
     .interest-card {
