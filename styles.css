@@ -2140,7 +2140,7 @@ h1.hero-title {
         border-right: none;
     }
     
-    /* Mobile Vertical Centering - Everything in Middle */
+    /* Mobile Full-Width Layout - All Sections Use Full Phone Width */
     .page-section {
         display: flex;
         flex-direction: column;
@@ -2148,6 +2148,9 @@ h1.hero-title {
         align-items: center;
         min-height: 100vh;
         padding: 1rem 0;
+        width: 100vw;
+        margin-left: calc(-50vw + 50%);
+        margin-right: calc(-50vw + 50%);
     }
     
     .container {
@@ -2156,6 +2159,37 @@ h1.hero-title {
         justify-content: center;
         align-items: center;
         width: 100%;
+        max-width: 100%;
+        padding: 0 1rem;
+    }
+    
+    /* Full-width backgrounds for all sections */
+    #education, #experience, #posts {
+        width: 100vw;
+        margin-left: calc(-50vw + 50%);
+        margin-right: calc(-50vw + 50%);
+    }
+    
+    /* Force full-width for all content containers */
+    .side-drawer-container {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        border-radius: 0 !important;
+    }
+    
+    .education-categories, .experience-categories {
+        margin: 0 !important;
+        width: 100% !important;
+    }
+    
+    .category-header, .category-content {
+        width: 100% !important;
+    }
+    
+    .notes-intro, .gitbook-preview {
+        width: 100% !important;
+        margin: 0 !important;
     }
     
     .course-list,
