@@ -2059,35 +2059,73 @@ h1.hero-title {
         font-size: 1.5rem;
     }
     
-    /* Mobile Hero Layout - Compact & Vertically Centered */
+    /* Mobile Hero Layout - Perfect Order: Name → Greetings → Photo → Address */
     .hero {
         grid-template-columns: 1fr;
         text-align: center;
         place-items: center;
-        gap: 1rem;
-        padding: 1rem 0;
+        gap: 1.5rem;
+        padding: 2rem 0;
         min-height: auto;
     }
     
+    /* 1. Big Name - Wancheng Lin */
     .hero-content {
         order: 1;
         width: 100%;
-        margin-bottom: 0.5rem;
+        margin-bottom: 0;
     }
     
+    .hero-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        line-height: 1.1;
+        margin-bottom: 0.5rem;
+        color: #991b1b;
+    }
+    
+    /* 2. Greetings - Hero tagline */
+    .hero-tagline {
+        font-size: 1.1rem;
+        font-weight: 400;
+        line-height: 1.4;
+        margin-bottom: 0;
+        color: #6b7280;
+    }
+    
+    /* 3. Photo - Centered */
     .hero-photo {
         order: 2;
-        width: 150px;
-        margin: 0 auto 0.5rem auto;
+        width: 180px;
+        height: 180px;
+        object-fit: cover;
+        border-radius: 12px;
+        margin: 0 auto;
+        box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+        border: 3px solid #e5e7eb;
     }
     
-    /* Mobile Contact Info - Compact Under Photo */
+    /* 4. Address - Contact info under photo */
     .contact-info {
         order: 3;
         width: 100%;
-        margin-top: 0.5rem;
+        margin-top: 0;
         text-align: center;
-        padding: 0.5rem 0;
+        padding: 0;
+    }
+    
+    .contact-main-title {
+        font-size: 1.3rem;
+        font-weight: 600;
+        margin-bottom: 0.75rem;
+        color: #991b1b;
+    }
+    
+    .contact-main-text {
+        font-size: 1rem;
+        line-height: 1.5;
+        color: #374151;
+        margin-bottom: 0;
     }
     
     /* Mobile Research Interests - Compact Three Parallel */
