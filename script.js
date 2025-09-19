@@ -584,35 +584,71 @@ function showCountryInfo(countryInfo) {
 }
 
 
-// Typing effect with blinking cursor and HTML support
+// Typing effect with HTML tag preservation
 function typeWriter(element, text, speed = 40) {
     element.innerHTML = "";
     element.classList.add("typing-cursor");
-    let i = 0;
-
-    function typing() {
-        if (i < text.length) {
-            // Check if we're starting a link
-            if (text.substring(i, i + 3) === '<a ') {
-                // Find the end of the link tag
-                const linkEnd = text.indexOf('</a>', i) + 4;
-                if (linkEnd > i) {
-                    element.innerHTML += text.substring(i, linkEnd);
-                    i = linkEnd;
+    
+    // Parse HTML tags and create a structure for typing
+    const parseHTML = (htmlString) => {
+        const result = [];
+        let i = 0;
+        
+        while (i < htmlString.length) {
+            if (htmlString.charAt(i) === '<') {
+                // Find the end of the HTML tag
+                const tagEnd = htmlString.indexOf('>', i) + 1;
+                if (tagEnd > i) {
+                    result.push({
+                        type: 'tag',
+                        content: htmlString.substring(i, tagEnd)
+                    });
+                    i = tagEnd;
                 } else {
-                    element.innerHTML += text.charAt(i);
+                    result.push({
+                        type: 'char',
+                        content: htmlString.charAt(i)
+                    });
                     i++;
                 }
             } else {
-                element.innerHTML += text.charAt(i);
+                result.push({
+                    type: 'char',
+                    content: htmlString.charAt(i)
+                });
                 i++;
             }
-            setTimeout(typing, speed);
+        }
+        return result;
+    };
+    
+    const parsedText = parseHTML(text);
+    let currentIndex = 0;
+    let currentHTML = "";
+    
+    function typing() {
+        if (currentIndex < parsedText.length) {
+            const item = parsedText[currentIndex];
+            
+            if (item.type === 'tag') {
+                // Add complete HTML tag at once
+                currentHTML += item.content;
+                element.innerHTML = currentHTML;
+                currentIndex++;
+                setTimeout(typing, speed);
+            } else {
+                // Add character by character
+                currentHTML += item.content;
+                element.innerHTML = currentHTML;
+                currentIndex++;
+                setTimeout(typing, speed);
+            }
         } else {
-            // remove cursor when finished
+            // Remove cursor when finished
             element.classList.remove("typing-cursor");
         }
     }
+    
     typing();
 }
 
@@ -621,9 +657,12 @@ function toggleFunFact(targetId) {
     const content = document.getElementById(targetId);
     const toggle = document.querySelector(`[data-target="${targetId}"]`);
     const typedElement = content.querySelector("#fun-fact-typed");
+    
+    console.log("Fun fact toggle clicked:", targetId);
+    console.log("Typed element found:", typedElement);
 
     // Your fun fact text with HTML links
-    const fullText = `I attended the same undergraduate institution as the founder of TikTok, <a href="https://en.wikipedia.org/wiki/Zhang_Yiming" target="_blank" rel="noopener">Zhang Yiming</a>, and the "father of modern differential geometry" <a href="https://en.wikipedia.org/wiki/Shiing-Shen_Chern" target="_blank" rel="noopener">Shiing-Shen Chern</a>—both of whom are constant sources of inspiration for me in entrepreneurship and mathematics.`;
+    const fullText = `I initially attended the same undergraduate institution as the <a href="https://en.wikipedia.org/wiki/Zhang_Yiming" class="alumni-name" target="_blank">founder of TikTok, Zhang Yiming</a>, and the <a href="https://en.wikipedia.org/wiki/Shiing-Shen_Chern" class="alumni-name" target="_blank">"father of modern differential geometry" Shiing-Shen Chern</a>—both of whom are constant sources of inspiration for me in entrepreneurship and mathematics.`;
 
     if (content && toggle) {
         const isActive = content.classList.contains("active");
@@ -631,11 +670,11 @@ function toggleFunFact(targetId) {
         if (isActive) {
             content.classList.remove("active");
             toggle.classList.remove("active");
-            typedElement.textContent = ""; // reset on close
+            typedElement.innerHTML = ""; // reset on close
         } else {
             content.classList.add("active");
             toggle.classList.add("active");
-            typeWriter(typedElement, fullText, 40);
+            typeWriter(typedElement, fullText, 17);
         }
     }
 }

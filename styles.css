@@ -2789,6 +2789,56 @@ h1.hero-title {
     text-shadow: 0 1px 2px rgba(153, 27, 27, 0.1);
 }
 
+/* Education Story Title Styling */
+.education-story-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #991b1b;
+    font-style: italic;
+    text-decoration: underline;
+    text-decoration-style: dashed;
+    text-decoration-color: #dc2626;
+    cursor: pointer;
+    margin: 1.5rem 0 1rem 0;
+    transition: color 0.3s ease;
+    background: none;
+    border: none;
+    padding: 0;
+    text-align: center;
+    width: 100%;
+    display: block !important;
+    justify-content: center !important;
+}
+
+.education-story-title:hover {
+    color: #dc2626;
+}
+
+/* Alumni Name Styling - Override fun fact italic styling */
+#fun-fact-typed .alumni-name,
+#fun-fact-typed a.alumni-name,
+.alumni-name {
+    font-family: 'Playfair Display', serif !important;
+    font-weight: 700 !important;
+    color: #991b1b !important;
+    font-style: normal !important;
+    text-shadow: 0 1px 2px rgba(153, 27, 27, 0.2) !important;
+    border-bottom: 1px solid rgba(153, 27, 27, 0.3) !important;
+    transition: all 0.3s ease !important;
+    font-size: inherit !important;
+    text-decoration: none !important;
+}
+
+#fun-fact-typed .alumni-name:hover,
+#fun-fact-typed a.alumni-name:hover,
+.alumni-name:hover {
+    color: #dc2626 !important;
+    text-shadow: 0 2px 4px rgba(153, 27, 27, 0.3) !important;
+    border-bottom-color: #dc2626 !important;
+    text-decoration: none !important;
+}
+
 /* Style links within institution names to match */
 .institution-name a,
 a.institution-name {
@@ -2936,6 +2986,24 @@ a.institution-name:hover {
     position: relative;
 }
 
+/* Override italic for alumni names specifically */
+#fun-fact-typed .alumni-name {
+    font-style: normal !important;
+    font-family: 'Playfair Display', serif !important;
+    font-weight: 700 !important;
+    color: #991b1b !important;
+    text-shadow: 0 1px 2px rgba(153, 27, 27, 0.2) !important;
+    border-bottom: 1px solid rgba(153, 27, 27, 0.3) !important;
+    transition: all 0.3s ease !important;
+    text-decoration: none !important;
+}
+
+#fun-fact-typed .alumni-name:hover {
+    color: #dc2626 !important;
+    text-shadow: 0 2px 4px rgba(153, 27, 27, 0.3) !important;
+    border-bottom-color: #dc2626 !important;
+}
+
 #fun-fact-typed a {
     color: #dc2626;
     text-decoration: none;
@@ -2948,6 +3016,27 @@ a.institution-name:hover {
 #fun-fact-typed a:hover {
     color: #991b1b;
     border-bottom-color: #991b1b;
+}
+
+/* Alumni name styling - comprehensive */
+#fun-fact-typed .alumni-name,
+#fun-fact-typed a.alumni-name {
+    font-family: 'Playfair Display', serif !important;
+    font-weight: 700 !important;
+    font-style: normal !important;
+    color: #991b1b !important;
+    text-shadow: 0 1px 2px rgba(153, 27, 27, 0.2) !important;
+    border-bottom: 1px solid rgba(153, 27, 27, 0.3) !important;
+    transition: all 0.3s ease !important;
+    text-decoration: none !important;
+}
+
+#fun-fact-typed .alumni-name:hover,
+#fun-fact-typed a.alumni-name:hover {
+    color: #dc2626 !important;
+    text-shadow: 0 2px 4px rgba(153, 27, 27, 0.3) !important;
+    border-bottom-color: #dc2626 !important;
+    text-decoration: none !important;
 }
 
 /* Removed arrow after hyperlinks */
