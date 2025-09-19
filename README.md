@@ -1,89 +1,156 @@
-# Wancheng Lin - Personal Academic Website
+# Academic Notes Repository
 
-A modern, responsive personal website showcasing academic background, research interests, and professional experience.
+A professional repository for LaTeX/Markdown academic notes with automated PDF compilation and GitBook integration.
 
-## 🌟 Features
+## 📚 Subjects
 
-- **Responsive Design**: Optimized for desktop, tablet, and mobile devices
-- **Modern UI/UX**: Clean, professional design with smooth animations
-- **Academic Focus**: Tailored for PhD students and researchers
-- **Interactive Elements**: Collapsible sections, smooth scrolling, and hover effects
-- **Dark Mode Support**: Automatic theme switching
-- **Contact Integration**: Social media links and contact information
+This repository contains notes for the following subjects:
 
-## 📁 Project Structure
+- **[Probability I](probability/)** - Basic probability concepts, random variables, and distributions
+- **[Stochastic Differential Equations](sde/)** - Brownian motion, Itô calculus, and SDE applications
+- **[Algorithms](algorithms/)** - Algorithm analysis, sorting, graph algorithms, and dynamic programming
+
+## 🚀 Features
+
+- **Automated LaTeX Compilation**: GitHub Actions automatically compiles `.tex` files to PDFs
+- **GitBook Integration**: Professional documentation with sidebar navigation
+- **PDF Publishing**: Compiled PDFs are automatically published to GitHub Pages
+- **Live PDF Preview**: GitBook pages with embedded PDF viewers using iframes
+- **Clean Structure**: Organized, minimal, and professional repository layout
+
+## 📁 Repository Structure
 
 ```
-├── index.html          # Main homepage
-├── education.html      # Education details
-├── experience.html     # Professional experience
-├── home.html          # Home section
-├── posts.html         # Blog posts and notes
-├── styles.css         # Main stylesheet
-├── script.js          # JavaScript functionality
-├── me.jpeg           # Profile photo
-└── README.md         # This file
+├── probability/
+│   ├── README.md
+│   ├── notes.tex
+│   └── pdf-viewer.md
+├── sde/
+│   ├── README.md
+│   ├── notes.tex
+│   └── pdf-viewer.md
+├── algorithms/
+│   ├── README.md
+│   ├── notes.tex
+│   └── pdf-viewer.md
+├── .github/workflows/
+│   └── latex-compile.yml
+├── .gitbook.yml
+├── SUMMARY.md
+└── README.md
 ```
 
-## 🚀 Live Website
+## 🛠️ Setup Instructions
 
-Visit the live website: [Your GitHub Pages URL will appear here]
+### 1. Create GitHub Repository
 
-## 🛠️ Technologies Used
+1. Go to [GitHub](https://github.com) and create a new repository
+2. Name it something like `academic-notes` or `latex-notes`
+3. Make it public (required for GitHub Pages)
+4. Don't initialize with README (we already have one)
 
-- **HTML5**: Semantic markup and structure
-- **CSS3**: Modern styling with Flexbox and Grid
-- **JavaScript**: Interactive functionality and animations
-- **Google Fonts**: Playfair Display and Inter typography
-- **GitHub Pages**: Free hosting and deployment
+### 2. Push Your Code
 
-## 📱 Sections
+```bash
+# Initialize git repository
+git init
 
-1. **Home**: Introduction, research interests, and profile
-2. **Education**: Academic background and course history
-3. **Experience**: Professional experience and conferences
-4. **Posts**: Research notes and recipes
+# Add all files
+git add .
 
-## 🎨 Design Features
+# Commit changes
+git commit -m "Initial commit: Academic notes repository setup"
 
-- **Color Scheme**: Professional red gradient theme
-- **Typography**: Elegant serif headings with clean sans-serif body text
-- **Animations**: Smooth transitions and hover effects
-- **Layout**: Modern card-based design with collapsible sections
+# Add your GitHub repository as remote
+git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git
 
-## 📧 Contact
+# Push to GitHub
+git push -u origin main
+```
 
-- **Email**: wancheng@bu.edu
-- **LinkedIn**: [LinkedIn Profile]
-- **Instagram**: [Instagram Profile]
-- **WeChat**: lin1065251277
+### 3. Enable GitHub Pages
 
-## 🔧 Local Development
+1. Go to your repository settings
+2. Navigate to "Pages" section
+3. Set source to "GitHub Actions"
+4. Save the settings
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/your-repo-name.git
-   ```
+### 4. Update PDF URLs
 
-2. Open `index.html` in your web browser
+After pushing, update the PDF viewer pages with your actual GitHub username and repository name:
 
-3. For development with live reload, use a local server:
-   ```bash
-   # Using Python
-   python -m http.server 8000
-   
-   # Using Node.js
-   npx serve .
-   ```
+1. Replace `[YOUR_USERNAME]` with your GitHub username
+2. Replace `[YOUR_REPO_NAME]` with your repository name
+3. Commit and push the changes
+
+### 5. Set Up GitBook (Optional)
+
+1. Go to [GitBook](https://www.gitbook.com)
+2. Create a new space
+3. Connect it to your GitHub repository
+4. GitBook will automatically sync with your repository
+
+## 📝 Usage
+
+### Adding New Notes
+
+1. Edit the `.tex` files in each subject folder
+2. Commit and push changes
+3. GitHub Actions will automatically compile the PDFs
+4. PDFs will be available at `https://YOUR_USERNAME.github.io/YOUR_REPO_NAME/pdfs/`
+
+### Viewing Notes
+
+- **GitBook**: Professional documentation interface with sidebar navigation
+- **PDF Viewers**: Embedded PDF viewers in each subject's `pdf-viewer.md` page
+- **Direct Download**: Direct links to PDF files
+
+## 🔧 Customization
+
+### LaTeX Templates
+
+Each `notes.tex` file includes:
+- Professional document class and packages
+- Proper formatting and structure
+- Mathematical notation support
+- Hyperlinks and cross-references
+
+### GitBook Configuration
+
+The `.gitbook.yml` file configures:
+- Root directory structure
+- Table of contents organization
+- Navigation sidebar
+
+### GitHub Actions
+
+The workflow automatically:
+- Compiles all `.tex` files
+- Runs LaTeX twice for proper cross-references
+- Publishes PDFs to GitHub Pages
+- Triggers on push and pull requests
+
+## 📖 Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Test the LaTeX compilation
+5. Submit a pull request
 
 ## 📄 License
 
-This project is open source and available under the [MIT License](LICENSE).
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🤝 Contributing
+## 🤝 Support
 
-Feel free to fork this project and customize it for your own academic website!
+If you encounter any issues:
+
+1. Check the GitHub Actions workflow status
+2. Verify GitHub Pages is enabled
+3. Ensure all LaTeX files compile locally
+4. Check the PDF viewer URLs are correct
 
 ---
 
-**Design by Wancheng Lin** © 2025
+*Happy note-taking! 📚*

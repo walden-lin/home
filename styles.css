@@ -127,40 +127,43 @@ h1.hero-title {
         padding: 0 24px;
     }
 
-    /* Hero section - Lock to screenshot layout */
+    /* Hero section - Full viewport height, no scroll required */
     .hero {
+        min-height: 100vh;              /* Full screen height */
         display: flex !important;
-        justify-content: space-between;
-        align-items: center;
-        gap: 0.5rem;
+        justify-content: space-between; /* Text left, photo right */
+        align-items: center;            /* Vertical centering */
+        gap: 2rem;                     /* Balanced spacing */
         grid-template-columns: none !important;
+        padding: 2rem;                 /* Safe edge spacing */
+        box-sizing: border-box;
     }
     
     .hero-title {
-        font-size: 56px;
+        font-size: clamp(2.5rem, 4vw, 3.5rem);  /* Responsive scaling */
         line-height: 1.2;
         font-weight: 700;
         color: #b91c1c;
-        margin-bottom: 12px;
+        margin-bottom: 0.5rem;         /* Tighter spacing */
     }
     
     .hero-tagline {
-        font-size: 22px;
+        font-size: clamp(1.2rem, 2vw, 1.5rem);  /* Responsive scaling */
         line-height: 1.4;
         font-weight: 500;
         color: #b91c1c;
-        margin-bottom: 16px;
+        margin-bottom: 0.75rem;        /* Tighter spacing */
     }
     
     .hero-intro {
-        font-size: 18px;
+        font-size: clamp(1rem, 1.5vw, 1.2rem);  /* Responsive scaling */
         line-height: 1.6;
         color: #374151;
-        margin-bottom: 16px;
+        margin-bottom: 1.5rem;         /* Keep spacing tight */
     }
     
     .hero-photo {
-        width: 360px;
+        width: clamp(220px, 25vw, 360px);  /* Scale with screen */
         border-radius: 12px;
         box-shadow: 0 6px 16px rgba(0,0,0,0.12);
         flex-shrink: 0;
@@ -1704,14 +1707,16 @@ h1.hero-title {
         padding: 0 1rem;
     }
     
-    /* Mobile Hero - Single Column Layout */
+    /* Mobile Hero - Two Column Layout (Name/Greetings | Photo/Contact) */
     .hero {
+        min-height: auto;              /* Override viewport height on mobile */
+        display: grid !important;      /* Use grid for mobile layout */
         grid-template-columns: 1fr 1fr;  /* Two columns: Name/Greetings | Photo/Contact */
         gap: 1.5rem;
-        text-align: left;  /* Left align for better two-column layout */
+        text-align: left;              /* Left align for better two-column layout */
         place-items: start;
-        min-height: auto;
         padding: 2rem 0;
+        align-items: start;            /* Start alignment for mobile */
     }
     
     .hero-content {
@@ -1924,6 +1929,87 @@ h1.hero-title {
     .hero-photo { display: block; margin: 0 auto; }
     .contact-content { display: flex; flex-direction: column; align-items: center; }
     .gitbook-preview, .notes-content, .posts-hamburger { margin-left: auto; margin-right: auto; }
+    
+    /* Center contact icons and other elements */
+    .contact-icons {
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .contact-link {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .contact-icon,
+    .contact-label {
+        text-align: center;
+    }
+    
+    /* Center all card content on mobile */
+    .interest-card {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .interest-card h3,
+    .interest-card p {
+        text-align: center;
+    }
+    
+    .interest-icon {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    /* Center course and conference items */
+    .course-item,
+    .conference-item {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .course-name,
+    .conference-name {
+        text-align: center;
+    }
+    
+    /* Center navigation and menu elements */
+    .hamburger-menu {
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .hamburger-button {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .hamburger-icon,
+    .hamburger-label {
+        text-align: center;
+    }
+    
+    /* Center category headers */
+    .category-header {
+        text-align: center;
+        justify-content: center;
+    }
+    
+    .category-title {
+        text-align: center;
+    }
 }
 
 /* Mobile - Only collapse grid on very small screens */
@@ -2280,7 +2366,7 @@ h1.hero-title {
     .interest-card p {
         font-size: 0.7rem;  /* Compact size */
         line-height: 1.2;
-        text-align: left;  /* Left align for better two-column layout */
+        text-align: center;  /* Center align for mobile */
     }
     
     .interest-icon {
