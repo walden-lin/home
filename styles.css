@@ -383,11 +383,12 @@ h1.hero-title {
 
 /* Hero Section */
 .hero {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: center;
-    min-height: 80vh;
+    grid-template-columns: 1fr;        /* Single column */
+    gap: 1.5rem;                      /* Consistent gap */
+    text-align: center;               /* Center alignment */
+    place-items: center;              /* Center items */
+    min-height: auto;                 /* No forced height */
+    padding: 2rem 0;                  /* Proper padding */
 }
 
 .hero-content {
@@ -1613,7 +1614,7 @@ h1.hero-title {
     /* Mobile Hero - Single Column Layout */
     .hero {
         grid-template-columns: 1fr;
-        gap: 2rem;
+        gap: 1.5rem;
         text-align: center;
         place-items: center;
         min-height: auto;
@@ -1654,11 +1655,12 @@ h1.hero-title {
     }
     
     .hero {
-        grid-template-columns: 1fr 1fr;
-        gap: 2rem;
-        text-align: left;
-        place-items: start;
-        min-height: 60vh;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        text-align: center;
+        place-items: center;
+        min-height: auto;
+        padding: 2rem 0;
     }
     
     .hero-text {
@@ -1851,11 +1853,12 @@ h1.hero-title {
     }
     
     .hero {
-        grid-template-columns: 1fr 1fr;
-        gap: 2rem;
-        text-align: left;
-        place-items: start;
-        min-height: 60vh;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        text-align: center;
+        place-items: center;
+        min-height: auto;
+        padding: 2rem 0;
     }
     
     .hero-text {
