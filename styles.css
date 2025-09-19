@@ -2051,12 +2051,43 @@ h1.hero-title {
         aspect-ratio: 4/3;
     }
     
+    /* Mobile Contact Icons - Four Parallel Layout (Like Research Interests) */
     .contact-icons {
-        gap: 1.5rem;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);  /* Four parallel icons */
+        gap: 0.5rem;
+        margin-top: 1rem;
+        width: 100%;
+        justify-items: center;
+    }
+    
+    .contact-link {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-decoration: none;
+        padding: 0.5rem;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+        min-width: 60px;
+        max-width: 80px;
+    }
+    
+    .contact-link:hover {
+        background-color: rgba(220, 38, 38, 0.1);
+        transform: translateY(-2px);
     }
     
     .contact-icon {
         font-size: 1.5rem;
+        margin-bottom: 0.25rem;
+    }
+    
+    .contact-label {
+        font-size: 0.7rem;
+        color: #6b7280;
+        text-align: center;
+        line-height: 1.2;
     }
     
     /* Mobile Hero Layout - Perfect Order: Name → Greetings → Photo → Address */
