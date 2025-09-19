@@ -2051,14 +2051,16 @@ h1.hero-title {
         aspect-ratio: 4/3;
     }
     
-    /* Mobile Contact Icons - Four Parallel Layout (Like Research Interests) */
+    /* Mobile Contact Icons - Below All Contact Text */
     .contact-icons {
         display: grid;
         grid-template-columns: repeat(4, 1fr);  /* Four parallel icons */
         gap: 0.5rem;
-        margin-top: 1rem;
+        margin-top: 1.5rem;  /* More space after all contact text */
+        margin-bottom: 2rem; /* Space before research interests */
         width: 100%;
         justify-items: center;
+        order: 4;  /* Ensure icons come after all contact text */
     }
     
     .contact-link {
@@ -2143,6 +2145,7 @@ h1.hero-title {
         margin-top: 0;
         text-align: center;
         padding: 0;
+        margin-bottom: 0;  /* No bottom margin, icons will follow */
     }
     
     .contact-main-title {
@@ -2687,6 +2690,22 @@ h1.hero-title {
     border-top: 1px solid rgba(220, 38, 38, 0.1);
     border-radius: 0 0 12px 12px;
     font-style: italic;
+}
+
+/* Mobile Fun Fact - More Space */
+@media (max-width: 768px) {
+    .fun-fact-content.active {
+        max-height: 120px;  /* Increased from 80px */
+    }
+    
+    .fun-fact-card {
+        padding: 1rem 1.25rem;  /* Increased padding */
+    }
+    
+    #fun-fact-typed {
+        font-size: 0.9rem;  /* Slightly larger text */
+        line-height: 1.5;   /* Better line spacing */
+    }
 }
 
 .fun-fact-card::before {
