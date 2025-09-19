@@ -507,6 +507,9 @@ h1.hero-title { font-size: clamp(2rem, 4vw, 4rem); }
     box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
     transition: all 0.3s ease;
     border: 3px solid #e5e7eb;
+    margin: 0 auto;
+    display: block;
+    max-width: 100%;
 }
 
 .hero-photo:hover {
@@ -1570,6 +1573,12 @@ h1.hero-title { font-size: clamp(2rem, 4vw, 4rem); }
         gap: 5rem;
     }
     
+    .hero-photo {
+        width: 400px;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+    
     .interests-grid {
         max-width: 1200px;
     }
@@ -1585,6 +1594,12 @@ h1.hero-title { font-size: clamp(2rem, 4vw, 4rem); }
     .hero {
         gap: 3.5rem;
     }
+    
+    .hero-photo {
+        width: 350px;
+        max-width: 350px;
+        margin: 0 auto;
+    }
 }
 
 /* MacBook/Laptop (1024px - 1366px) */
@@ -1596,6 +1611,12 @@ h1.hero-title { font-size: clamp(2rem, 4vw, 4rem); }
     
     .hero {
         gap: 3rem;
+    }
+    
+    .hero-photo {
+        width: 320px;
+        max-width: 320px;
+        margin: 0 auto;
     }
     
     .interests-grid {
@@ -1623,6 +1644,12 @@ h1.hero-title { font-size: clamp(2rem, 4vw, 4rem); }
     
     .hero {
         gap: 3rem;
+    }
+    
+    .hero-photo {
+        width: 280px;
+        max-width: 280px;
+        margin: 0 auto;
     }
     
     .interests-grid {
@@ -1822,12 +1849,12 @@ h1.hero-title { font-size: clamp(2rem, 4vw, 4rem); }
         line-height: 1.4;
     }
 
-    /* Optimize hero photo for mobile side-by-side layout */
+    /* Optimize hero photo for tablet side-by-side layout */
     .hero-photo { 
-        width: 100%;
-        max-width: 200px;
+        width: 250px;
+        max-width: 250px;
         height: auto;
-        margin: 0;
+        margin: 0 auto;
     }
     .contact-content { display: flex; flex-direction: column; align-items: center; }
     .gitbook-preview, .notes-content, .posts-hamburger { margin-left: auto; margin-right: auto; }
