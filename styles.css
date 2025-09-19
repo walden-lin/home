@@ -117,6 +117,98 @@ h1.hero-title {
     background: linear-gradient(135deg, #fef7f7 0%, #fefefe 100%);
 }
 
+/* ========================================
+   LARGE SCREEN LAYOUT LOCK (iMac/MacBook/iPad)
+   ======================================== */
+@media (min-width: 768px) {
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 24px;
+    }
+
+    /* Hero section - Lock to screenshot layout */
+    .hero {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 3rem;
+    }
+    
+    .hero-title {
+        font-size: 56px;
+        line-height: 1.2;
+        font-weight: 700;
+        color: #b91c1c;
+        margin-bottom: 12px;
+    }
+    
+    .hero-tagline {
+        font-size: 22px;
+        line-height: 1.4;
+        font-weight: 500;
+        color: #b91c1c;
+        margin-bottom: 16px;
+    }
+    
+    .hero-intro {
+        font-size: 18px;
+        line-height: 1.6;
+        color: #374151;
+        margin-bottom: 48px;
+    }
+    
+    .hero-photo {
+        width: 360px;
+        border-radius: 12px;
+        box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+        flex-shrink: 0;
+    }
+
+    /* Research interests - Lock 3 columns */
+    .section-title {
+        font-size: 28px;
+        font-weight: 700;
+        color: #991b1b;
+        text-align: center;
+        margin-bottom: 32px;
+    }
+    
+    .interests-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 32px;
+        justify-items: center;
+    }
+    
+    .card {
+        width: 300px;
+        padding: 24px;
+        border-radius: 12px;
+        background: #fff;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        text-align: center;
+    }
+    
+    .card-icon {
+        font-size: 40px;
+        margin-bottom: 16px;
+    }
+    
+    .card-title {
+        font-size: 20px;
+        font-weight: 600;
+        color: #991b1b;
+        margin-bottom: 12px;
+    }
+    
+    .card-body {
+        font-size: 16px;
+        line-height: 1.6;
+        color: #374151;
+    }
+}
+
 .section-title {
     font-size: 2.5rem;
     text-align: center;
@@ -1024,7 +1116,7 @@ h1.hero-title {
     margin: 0 auto;
 }
 
-/* Layout Lock Card Design - Optimal Width to Prevent Text Wrapping */
+/* Layout Lock Card Design - Fixed Proportions */
 .interest-card {
     background: linear-gradient(135deg, #ffffff 0%, #fef7f7 100%);
     border: 1px solid #fecaca;
@@ -1037,8 +1129,8 @@ h1.hero-title {
     overflow: hidden;
     word-wrap: break-word;
     hyphens: auto;
-    max-width: 350px;       /* Increased to prevent text wrapping */
-    min-width: 250px;       /* Increased to prevent text squish */
+    max-width: 320px;       /* Prevents too wide cards on large screens */
+    min-width: 200px;       /* Prevents text squish on small screens */
     width: 100%;            /* Takes full grid cell width */
 }
 
@@ -1613,10 +1705,10 @@ h1.hero-title {
     
     /* Mobile Hero - Single Column Layout */
     .hero {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;  /* Two columns: Name/Greetings | Photo/Contact */
         gap: 1.5rem;
-        text-align: center;
-        place-items: center;
+        text-align: left;  /* Left align for better two-column layout */
+        place-items: start;
         min-height: auto;
         padding: 2rem 0;
     }
@@ -1655,17 +1747,17 @@ h1.hero-title {
     }
     
     .hero {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;  /* Two columns: Name/Greetings | Photo/Contact */
         gap: 1.5rem;
-        text-align: center;
-        place-items: center;
+        text-align: left;  /* Left align for better two-column layout */
+        place-items: start;
         min-height: auto;
         padding: 2rem 0;
     }
     
     .hero-text {
         margin-bottom: 0;
-        align-items: center;
+        align-items: flex-start;  /* Left align text in left column */
     }
     
     .hero-title {
@@ -1776,7 +1868,7 @@ h1.hero-title {
     }
     
     .experience-list {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;  /* Two columns: Name/Greetings | Photo/Contact */
         gap: 1rem;
     }
     
@@ -1799,33 +1891,31 @@ h1.hero-title {
         padding: 0.5rem 1rem;
     }
     
-    /* Tablet Research Interests - Optimal Width to Prevent Wrapping */
+    /* Mobile Research Interests - Three Parallel Cards */
     .interests-grid {
         grid-template-columns: repeat(3, 1fr);
-        gap: 1.25rem;  /* Slightly more gap for wider cards */
+        gap: 1rem;
         margin: 2rem 0;
     }
     
     .interest-card {
-        padding: 1.25rem;  /* More padding for wider cards */
-        min-width: 180px;  /* Increased to prevent text wrapping */
+        padding: 1rem;
+        min-width: 120px;
         max-width: none;
     }
     
     .interest-card h3 {
-        font-size: 1.1rem;  /* Slightly larger for better readability */
+        font-size: 1rem;
         margin-bottom: 0.5rem;
-        white-space: nowrap;  /* Prevent title wrapping */
     }
     
     .interest-card p {
-        font-size: 0.9rem;  /* Larger text for better readability */
+        font-size: 0.85rem;
         line-height: 1.4;
-        text-align: center;
     }
     
     .interest-icon {
-        font-size: 2.2rem;  /* Larger icon for better proportion */
+        font-size: 2rem;
         margin-bottom: 0.5rem;
     }
     
@@ -1853,17 +1943,17 @@ h1.hero-title {
     }
     
     .hero {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;  /* Two columns: Name/Greetings | Photo/Contact */
         gap: 1.5rem;
-        text-align: center;
-        place-items: center;
+        text-align: left;  /* Left align for better two-column layout */
+        place-items: start;
         min-height: auto;
         padding: 2rem 0;
     }
     
     .hero-text {
         margin-bottom: 0;
-        align-items: center;
+        align-items: flex-start;  /* Left align text in left column */
     }
     
     .hero-title {
@@ -1974,7 +2064,7 @@ h1.hero-title {
     }
     
     .experience-list {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;  /* Two columns: Name/Greetings | Photo/Contact */
         gap: 1rem;
     }
     
@@ -2071,7 +2161,7 @@ h1.hero-title {
     .contact-link {
         display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;  /* Left align text in left column */
         text-decoration: none;
         padding: 0.5rem;
         border-radius: 8px;
@@ -2093,15 +2183,15 @@ h1.hero-title {
     .contact-label {
         font-size: 0.7rem;
         color: #6b7280;
-        text-align: center;
+        text-align: left;  /* Left align for better two-column layout */
         line-height: 1.2;
     }
     
     /* Mobile Hero Layout - Perfect Order: Name → Greetings → Photo → Address */
     .hero {
-        grid-template-columns: 1fr;
-        text-align: center;
-        place-items: center;
+        grid-template-columns: 1fr 1fr;  /* Two columns: Name/Greetings | Photo/Contact */
+        text-align: left;  /* Left align for better two-column layout */
+        place-items: start;
         gap: 1.5rem;
         padding: 2rem 0;
         min-height: auto;
@@ -2148,7 +2238,7 @@ h1.hero-title {
         order: 3;
         width: 100%;
         margin-top: 0;
-        text-align: center;
+        text-align: left;  /* Left align for better two-column layout */
         padding: 0;
         margin-bottom: 0;  /* No bottom margin, icons will follow */
     }
@@ -2189,7 +2279,7 @@ h1.hero-title {
     .interest-card p {
         font-size: 0.7rem;  /* Compact size */
         line-height: 1.2;
-        text-align: center;
+        text-align: left;  /* Left align for better two-column layout */
     }
     
     .interest-icon {
@@ -2211,7 +2301,7 @@ h1.hero-title {
         font-size: 0.8rem;
         padding: 0.75rem 0.5rem;
         flex: 1;
-        text-align: center;
+        text-align: left;  /* Left align for better two-column layout */
         border-right: 1px solid rgba(255, 255, 255, 0.1);
     }
     
@@ -2224,7 +2314,7 @@ h1.hero-title {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: center;
+        align-items: flex-start;  /* Left align text in left column */
         min-height: 100vh;
         padding: 1rem 0;
         width: 100vw;
@@ -2236,7 +2326,7 @@ h1.hero-title {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: center;
+        align-items: flex-start;  /* Left align text in left column */
         width: 100%;
         max-width: 100%;
         padding: 0 1rem;
@@ -2273,7 +2363,7 @@ h1.hero-title {
     
     .course-list,
     .conference-list {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;  /* Two columns: Name/Greetings | Photo/Contact */
     }
     
     .hero-photo {
@@ -2436,7 +2526,7 @@ h1.hero-title {
 @media (max-width: 768px) {
     .footer-content {
         flex-direction: column;
-        text-align: center;
+        text-align: left;  /* Left align for better two-column layout */
         gap: 2rem;
     }
     
@@ -2565,7 +2655,7 @@ h1.hero-title {
 @media (max-width: 768px) {
     .map-container {
         flex-direction: column;
-        text-align: center;
+        text-align: left;  /* Left align for better two-column layout */
         gap: 1.5rem;
     }
     
