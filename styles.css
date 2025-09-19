@@ -2783,6 +2783,24 @@ h1.hero-title {
     text-shadow: 0 1px 2px rgba(153, 27, 27, 0.1);
 }
 
+/* Style links within institution names to match */
+.institution-name a,
+a.institution-name {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    color: #991b1b;
+    font-style: italic;
+    text-shadow: 0 1px 2px rgba(153, 27, 27, 0.1);
+    text-decoration: none;
+    font-size: inherit;
+}
+
+.institution-name a:hover,
+a.institution-name:hover {
+    color: #dc2626;
+    text-decoration: underline;
+}
+
 .platform-name {
     font-family: 'Inter', sans-serif;
     font-weight: 600;
