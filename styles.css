@@ -1023,7 +1023,7 @@ h1.hero-title {
     margin: 0 auto;
 }
 
-/* Layout Lock Card Design - Fixed Proportions */
+/* Layout Lock Card Design - Optimal Width to Prevent Text Wrapping */
 .interest-card {
     background: linear-gradient(135deg, #ffffff 0%, #fef7f7 100%);
     border: 1px solid #fecaca;
@@ -1036,8 +1036,8 @@ h1.hero-title {
     overflow: hidden;
     word-wrap: break-word;
     hyphens: auto;
-    max-width: 320px;       /* Prevents too wide cards on large screens */
-    min-width: 200px;       /* Prevents text squish on small screens */
+    max-width: 350px;       /* Increased to prevent text wrapping */
+    min-width: 250px;       /* Increased to prevent text squish */
     width: 100%;            /* Takes full grid cell width */
 }
 
@@ -1797,31 +1797,33 @@ h1.hero-title {
         padding: 0.5rem 1rem;
     }
     
-    /* Mobile Research Interests - Three Parallel Cards */
+    /* Tablet Research Interests - Optimal Width to Prevent Wrapping */
     .interests-grid {
         grid-template-columns: repeat(3, 1fr);
-        gap: 1rem;
+        gap: 1.25rem;  /* Slightly more gap for wider cards */
         margin: 2rem 0;
     }
     
     .interest-card {
-        padding: 1rem;
-        min-width: 120px;
+        padding: 1.25rem;  /* More padding for wider cards */
+        min-width: 180px;  /* Increased to prevent text wrapping */
         max-width: none;
     }
     
     .interest-card h3 {
-        font-size: 1rem;
+        font-size: 1.1rem;  /* Slightly larger for better readability */
         margin-bottom: 0.5rem;
+        white-space: nowrap;  /* Prevent title wrapping */
     }
     
     .interest-card p {
-        font-size: 0.85rem;
+        font-size: 0.9rem;  /* Larger text for better readability */
         line-height: 1.4;
+        text-align: center;
     }
     
     .interest-icon {
-        font-size: 2rem;
+        font-size: 2.2rem;  /* Larger icon for better proportion */
         margin-bottom: 0.5rem;
     }
     
@@ -2162,31 +2164,33 @@ h1.hero-title {
         margin-bottom: 0;
     }
     
-    /* Mobile Research Interests - Compact Three Parallel */
+    /* Mobile Research Interests - Optimal Width to Prevent Wrapping */
     .interests-grid {
         grid-template-columns: repeat(3, 1fr);
-        gap: 0.5rem;
+        gap: 0.75rem;  /* Slightly more gap for wider cards */
         margin: 1rem 0;
     }
     
     .interest-card {
-        min-width: 100px;
-        padding: 0.5rem;
+        min-width: 140px;  /* Increased to prevent text wrapping */
+        padding: 0.75rem;  /* More padding for better readability */
         max-width: none;
     }
     
     .interest-card h3 {
-        font-size: 0.8rem;
+        font-size: 0.85rem;  /* Slightly larger for better readability */
         margin-bottom: 0.25rem;
+        white-space: nowrap;  /* Prevent title wrapping */
     }
     
     .interest-card p {
-        font-size: 0.7rem;
-        line-height: 1.2;
+        font-size: 0.75rem;  /* Slightly larger for better readability */
+        line-height: 1.3;
+        text-align: center;
     }
     
     .interest-icon {
-        font-size: 1.2rem;
+        font-size: 1.3rem;  /* Slightly larger for better proportion */
         margin-bottom: 0.25rem;
     }
     
