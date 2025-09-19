@@ -29,12 +29,31 @@ h1, h2, h3, h4, h5, h6 {
     color: #991b1b;
 }
 
-/* Clamp-based type scale for better mobile sizing */
-h1.hero-title { font-size: clamp(2rem, 6vw, 4rem); }
-.hero-tagline { font-size: clamp(1rem, 3.2vw, 1.25rem); }
-.intro-title, .section-title { font-size: clamp(1.5rem, 4.5vw, 2.5rem); }
-.contact-main-title { font-size: clamp(1.6rem, 4.8vw, 2.5rem); }
-.contact-main-text { font-size: clamp(1rem, 3.8vw, 1.4rem); }
+/* Clamp-based type scale for better responsive sizing */
+h1.hero-title { font-size: clamp(2rem, 4vw, 4rem); }
+.hero-tagline { font-size: clamp(1rem, 2.5vw, 1.25rem); }
+.intro-title, .section-title { font-size: clamp(1.5rem, 3.5vw, 2.5rem); }
+.contact-main-title { font-size: clamp(1.6rem, 3.8vw, 2.5rem); }
+.contact-main-text { font-size: clamp(1rem, 2.8vw, 1.4rem); }
+
+/* Responsive font scaling for different screen sizes */
+@media (min-width: 1440px) {
+    h1.hero-title { font-size: 3.5rem; }
+    .section-title { font-size: 2.2rem; }
+    .intro-title { font-size: 2rem; }
+}
+
+@media (max-width: 1366px) and (min-width: 1024px) {
+    h1.hero-title { font-size: 3rem; }
+    .section-title { font-size: 2rem; }
+    .intro-title { font-size: 1.8rem; }
+}
+
+@media (max-width: 1023px) and (min-width: 769px) {
+    h1.hero-title { font-size: 2.5rem; }
+    .section-title { font-size: 1.8rem; }
+    .intro-title { font-size: 1.6rem; }
+}
 
 /* Container */
 .container {
@@ -1539,6 +1558,86 @@ h1.hero-title { font-size: clamp(2rem, 6vw, 4rem); }
 }
 
 /* Responsive Design */
+
+/* Large Desktop (1440px+) */
+@media (min-width: 1440px) {
+    .container {
+        max-width: 1400px;
+        padding: 0 3rem;
+    }
+    
+    .hero {
+        gap: 5rem;
+    }
+    
+    .interests-grid {
+        max-width: 1200px;
+    }
+}
+
+/* Desktop (1024px - 1439px) */
+@media (max-width: 1439px) and (min-width: 1024px) {
+    .container {
+        max-width: 1000px;
+        padding: 0 2.5rem;
+    }
+    
+    .hero {
+        gap: 3.5rem;
+    }
+}
+
+/* MacBook/Laptop (1024px - 1366px) */
+@media (max-width: 1366px) and (min-width: 1024px) {
+    .container {
+        max-width: 1000px;
+        padding: 0 2rem;
+    }
+    
+    .hero {
+        gap: 3rem;
+    }
+    
+    .interests-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+    }
+    
+    .course-list,
+    .conference-list {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    
+    .side-drawer-container {
+        max-width: 1200px;
+    }
+}
+
+/* Small Desktop/Large Tablet (769px - 1023px) */
+@media (max-width: 1023px) and (min-width: 769px) {
+    .container {
+        max-width: 900px;
+        padding: 0 2rem;
+    }
+    
+    .hero {
+        gap: 3rem;
+    }
+    
+    .interests-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+    }
+    
+    .course-list,
+    .conference-list {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+}
+
+/* Tablet (481px - 768px) */
 @media (max-width: 768px) {
     .container {
         padding: 0 1rem;
@@ -1579,6 +1678,7 @@ h1.hero-title { font-size: clamp(2rem, 6vw, 4rem); }
     .side-drawer-container {
         flex-direction: column;
         min-height: auto;
+        margin: 0 1rem;
     }
     
     .left-panel {
@@ -1586,11 +1686,12 @@ h1.hero-title { font-size: clamp(2rem, 6vw, 4rem); }
         min-width: auto;
         border-right: none;
         border-bottom: 1px solid #e5e5e5;
+        padding: 1rem;
     }
     
     .right-panel {
         min-height: 400px;
-        padding: 1rem;
+        padding: 1.5rem;
     }
     
     .content-panel {
