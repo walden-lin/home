@@ -1533,7 +1533,7 @@ h1.hero-title {
     background: #f8fafc;
     color: #374151;
     border-bottom: 1px solid #e5e7eb;
-    border-left: 4px solid #ff6b6b;
+    border-left: 4px solid #cc0000; /* BU Scarlet */
 }
 
 .category-header[data-target="unc-duke-content"] {
@@ -1547,7 +1547,7 @@ h1.hero-title {
     background: #f8fafc;
     color: #374151;
     border-bottom: 1px solid #e5e7eb;
-    border-left: 4px solid #a855f7;
+    border-left: 4px solid #711a5f; /* Nankai purple (RGB 126,12,110) */
 }
 
 .category-header[data-target="shortterm-content"] {
@@ -1555,6 +1555,14 @@ h1.hero-title {
     color: #374151;
     border-bottom: 1px solid #e5e7eb;
     border-left: 4px solid #4ade80;
+}
+
+/* Université de Montréal (Royal Blue) */
+.category-header[data-target="udem-content"] {
+    background: #f8fafc;
+    color: #374151;
+    border-bottom: 1px solid #e5e7eb;
+    border-left: 4px solid #0057AC; /* Royal Blue */
 }
 
 .category-header:hover {
@@ -1600,7 +1608,7 @@ h1.hero-title {
     color: #1e293b;
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-left-color: #ff6b6b; /* Always keep Boston red */
+    border-left-color: #cc0000; /* Keep BU Scarlet on hover */
 }
 
 .category-header[data-target="unc-duke-content"]:hover {
@@ -1616,7 +1624,7 @@ h1.hero-title {
     color: #1e293b;
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-left-color: #a855f7; /* Always keep Nankai purple */
+    border-left-color: #711a5f; /* Keep Nankai purple */
 }
 
 .category-header[data-target="shortterm-content"]:hover {
@@ -1625,6 +1633,15 @@ h1.hero-title {
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-left-color: #4ade80; /* Always keep Short-term green */
+}
+
+/* Keep Royal Blue on hover for UdeM */
+.category-header[data-target="udem-content"]:hover {
+    background: #f1f5f9;
+    color: #1e293b;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-left-color: #0057AC;
 }
 
 /* Experience Categories - Same as Education */
