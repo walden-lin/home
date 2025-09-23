@@ -46,6 +46,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize active nav link
     updateActiveNavLink();
     
+    // Initialize visitor map functionality
+    initializeVisitorMapStats();
+    
     // Auto-activate Notes subsection when Posts section is accessed
     function activateNotesSubsection() {
         const postsSection = document.getElementById('posts');
@@ -690,7 +693,30 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-// Initialize visitor map when page loads
-document.addEventListener('DOMContentLoaded', function() {
-    initializeVisitorMap();
-});
+// Visitor Map Statistics Animation
+function initializeVisitorMapStats() {
+    // Animate statistics on load
+    animateStatistics();
+}
+
+function animateStatistics() {
+    const statNumbers = document.querySelectorAll('.visitor-map-stats .stat-number');
+    
+    statNumbers.forEach(stat => {
+        const finalValue = parseInt(stat.textContent);
+        let currentValue = 0;
+        const increment = finalValue / 50; // 50 steps
+        const duration = 2000; // 2 seconds
+        const stepTime = duration / 50;
+        
+        const timer = setInterval(() => {
+            currentValue += increment;
+            if (currentValue >= finalValue) {
+                stat.textContent = finalValue;
+                clearInterval(timer);
+            } else {
+                stat.textContent = Math.floor(currentValue);
+            }
+        }, stepTime);
+    });
+}
