@@ -2610,6 +2610,18 @@ h1.hero-title {
     align-items: center;
     justify-content: center;
     min-width: 200px;
+    gap: 0.75rem;
+}
+
+.footer-logo {
+    height: 24px;
+    width: auto;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.footer-logo:hover {
+    opacity: 1;
 }
 
 .design-credit {
